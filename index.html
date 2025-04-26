@@ -2,72 +2,148 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>George Johnson - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
+    /* CSS Variables for easy theme management */
+    :root {
+      --primary-bg: #f8f9fa; /* Light gray background */
+      --section-bg: #ffffff; /* White section background */
+      --header-bg: #0d1b2a;  /* Darker, richer blue */
+      --text-color: #495057; /* Dark gray for text */
+      --heading-color: #1d3557; /* Strong blue for headings */
+      --accent-color: #457b9d;  /* Muted blue for accents/links */
+      --light-border: #e0e0e0; /* Light border color */
+      --white: #ffffff;
+      --shadow-color: rgba(0, 0, 0, 0.08);
+      --header-font: 'Poppins', sans-serif;
+      --body-font: 'Lato', sans-serif;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-      padding: 20px;
+      font-family: var(--body-font);
+      background-color: var(--primary-bg);
+      color: var(--text-color);
+      line-height: 1.7;
+      padding: 0; /* Remove default padding */
+      margin: 0; /* Ensure no default margin */
+    }
+
+    .container {
+      max-width: 1000px; /* Limit content width on large screens */
+      margin: 0 auto; /* Center the container */
+      padding: 20px; /* Add padding inside the container */
     }
 
     header {
-      background-color: #1e293b;
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 30px;
+      background-color: var(--header-bg);
+      color: var(--white);
+      padding: 25px 30px;
+      border-radius: 0 0 15px 15px; /* Rounded bottom corners */
+      margin-bottom: 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      box-shadow: 0 4px 10px var(--shadow-color);
+      position: sticky; /* Make header sticky */
+      top: 0; /* Stick to the top */
+      z-index: 1000; /* Ensure it's above other content */
     }
 
-    header h1 {
-      font-size: 2rem;
+    .header-title h1 {
+      font-family: var(--header-font);
+      font-size: 2.2rem;
+      margin: 0 0 10px 0;
+      color: var(--white);
     }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .social-links a {
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .social-links a:hover {
+      opacity: 1;
+    }
+
+    .social-links img {
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 6px;
+      filter: brightness(0) invert(1); /* Make icons white */
+    }
+    .social-links .email-icon {
+        font-size: 1.2rem; /* Style the emoji slightly */
+        margin-right: 5px;
+    }
+
 
     nav {
       display: flex;
-      gap: 15px;
+      gap: 10px; /* Reduced gap slightly */
       flex-wrap: wrap;
     }
 
     nav a {
-      color: white;
+      color: var(--white);
       text-decoration: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      background-color: #334155;
-      transition: background 0.3s ease;
+      padding: 8px 15px;
+      border-radius: 20px; /* Pill shape */
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      border: 1px solid transparent; /* Prepare for hover border */
     }
 
-    nav a:hover {
-      background-color: #475569;
+    nav a:hover, nav a:focus {
+      background-color: var(--accent-color);
+      color: var(--white);
+      border-color: var(--accent-color);
     }
 
     section {
-      background: white;
-      padding: 20px;
-      margin-bottom: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      background: var(--section-bg);
+      padding: 30px; /* Increased padding */
+      margin-bottom: 35px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px var(--shadow-color);
+      scroll-margin-top: 100px; /* Offset for sticky header */
     }
 
     section h2 {
-      margin-bottom: 15px;
-      font-size: 1.5rem;
-      color: #0f172a;
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 5px;
+      font-family: var(--header-font);
+      margin-bottom: 25px; /* Increased margin */
+      font-size: 1.8rem;
+      color: var(--heading-color);
+      border-bottom: 3px solid var(--accent-color); /* Accent color border */
+      padding-bottom: 10px;
+      display: inline-block; /* Make border only as wide as text */
     }
 
     ul {
@@ -75,95 +151,253 @@
       padding-left: 0;
     }
 
-    li {
+    /* Styling for Project and Experience items */
+    .list-item {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 5px;
+      margin-bottom: 25px; /* Space between items */
+      padding-bottom: 25px; /* Space before border */
+      border-bottom: 1px solid var(--light-border); /* Separator */
+    }
+    .list-item:last-child {
+        margin-bottom: 0; /* Remove margin for last item */
+        padding-bottom: 0; /* Remove padding for last item */
+        border-bottom: none; /* Remove border for last item */
     }
 
-    li img {
-      margin-right: 10px;
-      height: 30px;
-      width: auto;
+
+    .item-icon {
+      margin-right: 15px;
+      height: 35px;
+      width: 35px; /* Ensure consistent icon area */
+      object-fit: contain; /* Prevent distortion */
+      flex-shrink: 0; /* Prevent icon shrinking */
+      margin-top: 3px;
+    }
+    .item-icon.tech-logo {
+        padding: 2px; /* Add slight padding if logos look cramped */
     }
 
-    li a {
-      font-size: 1rem;
-      color: #2563eb;
+    .item-content {
+      flex-grow: 1;
+    }
+
+    .item-content strong { /* For job titles/company names */
+        font-weight: 700;
+        color: var(--heading-color);
+        display: block; /* Make title take full width */
+        margin-bottom: 5px;
+    }
+
+    .item-content a {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent-color);
       text-decoration: none;
+      transition: color 0.3s ease;
+      display: inline-block; /* Allows margin-bottom */
+      margin-bottom: 8px;
     }
 
-    li a:hover {
+    .item-content a:hover {
+      color: var(--heading-color);
       text-decoration: underline;
     }
 
-    .description {
-      margin-left: 40px;
-      font-size: 0.9rem;
-      color: #555;
-      margin-bottom: 15px;
+    .item-description {
+      font-size: 0.95rem;
+      color: var(--text-color);
+      line-height: 1.6;
+      /* Removed margin-left, handled by flex gap */
     }
+
+    /* Education Section Specifics */
+    .education-entry {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        margin-bottom: 25px;
+    }
+    .education-entry:last-child {
+        margin-bottom: 0;
+    }
+    .education-logo {
+        height: 45px;
+        margin-top: 5px;
+        flex-shrink: 0;
+    }
+    .education-details strong {
+        font-size: 1.1rem;
+        color: var(--heading-color);
+        display: block;
+    }
+    .education-details ul {
+        margin: 8px 0 0 0; /* No indent needed */
+        padding-left: 0;
+        list-style-position: inside;
+    }
+    .education-details li {
+        margin-bottom: 5px;
+        font-size: 0.95rem;
+    }
+     .education-details li::before { /* Custom bullet */
+        content: "▹"; /* Use a different character like a triangle */
+        color: var(--accent-color);
+        margin-right: 8px;
+        font-weight: bold;
+    }
+
+
+    /* Resume Section */
+     #resumes ul li {
+        margin-bottom: 15px;
+     }
+     #resumes ul li a {
+        font-size: 1.1rem;
+        color: var(--accent-color);
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.3s ease;
+     }
+     #resumes ul li a::before {
+        content: "📄"; /* Document emoji */
+        margin-right: 8px;
+     }
+      #resumes ul li a:hover {
+        color: var(--heading-color);
+        text-decoration: underline;
+      }
 
     .back-to-top {
       text-align: right;
-      margin-top: 10px;
+      margin-top: 20px;
     }
 
     .back-to-top a {
       font-size: 0.9rem;
-      color: #555;
-      text-decoration: underline;
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .back-to-top a:hover {
+        color: var(--accent-color);
+        text-decoration: underline;
     }
 
-    @media (max-width: 600px) {
+    /* Responsive Design */
+    @media (max-width: 768px) {
       header {
         flex-direction: column;
         align-items: flex-start;
+        position: static; /* Remove sticky header on mobile maybe? Or adjust padding */
+        border-radius: 0; /* Full width header */
+      }
+
+      .social-links {
+          margin-top: 10px; /* Space between title/links and nav */
       }
 
       nav {
-        margin-top: 10px;
+        margin-top: 20px;
+        width: 100%;
         flex-direction: column;
         align-items: flex-start;
       }
+      nav a {
+          width: 100%; /* Make nav links full width */
+          text-align: center;
+          padding: 10px 15px;
+          margin-bottom: 5px; /* Space between stacked links */
+      }
+
+      section {
+        padding: 20px;
+        scroll-margin-top: 20px; /* Adjust for non-sticky header if changed */
+      }
+      section h2 {
+          font-size: 1.6rem;
+      }
+
+      .header-title h1 {
+          font-size: 1.8rem;
+      }
+
+      .list-item {
+          flex-direction: column; /* Stack icon/content on mobile */
+          align-items: flex-start;
+      }
+      .item-icon {
+          margin-bottom: 10px; /* Space below icon when stacked */
+          margin-right: 0;
+      }
+
+      .education-entry {
+          flex-direction: column; /* Stack logo/details on mobile */
+          align-items: flex-start;
+          gap: 10px;
+      }
+      .education-logo {
+          margin-bottom: 5px;
+      }
     }
 
+    /* Ensure tech logos use the class for consistent sizing */
     .tech-logo {
-      height: 30px;
-      vertical-align: middle;
-      margin-right: 8px;
+        /* Already covered by .item-icon */
     }
+
+    /* Minor fix for LaTeX section link */
+    #latex .list-item .item-icon {
+        /* Use default item-icon styling */
+    }
+    #latex .list-item a::before {
+        /* Don't add emoji here */
+        content: "";
+        margin-right: 0;
+    }
+     /* Specific styling for non-LaTeX link */
+     #latex .list-item:last-child {
+         align-items: center; /* Vertically align the emoji and text */
+     }
+     #latex .list-item:last-child img.item-icon { /* Hide img if not needed */
+        display: none;
+     }
+     #latex .list-item:last-child .item-content a::before {
+        content: "📝";
+        margin-right: 8px;
+     }
+
   </style>
 </head>
 <body>
   <a id="top"></a>
+
   <header>
-    <div style="display: flex; flex-direction: column;">
-      <h1 style="margin-bottom: 8px;">George Johnson</h1>
-      <div style="display: flex; gap: 10px;">
-        <a href="https://github.com/georgejohnson04" target="_blank" style="color: white; text-decoration: none;">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" style="height: 20px; vertical-align: middle; margin-right: 5px;">
-          GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/george-johnson2004/" target="_blank" style="color: white; text-decoration: none;">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" style="height: 20px; vertical-align: middle; margin-right: 5px;">
-          LinkedIn
-        </a>
-        <a href="mailto:george.johnson022004@gmail.com" style="color: white; text-decoration: none;">
-          📧 Email
-        </a>
-      </div>
+    <div class="header-title">
+      <h1>George Johnson</h1>
+       <div class="social-links">
+         <a href="https://github.com/georgejohnson04" target="_blank" >
+           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" >GitHub
+         </a>
+         <a href="https://www.linkedin.com/in/george-johnson2004/" target="_blank" >
+           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" >LinkedIn
+         </a>
+         <a href="mailto:george.johnson022004@gmail.com">
+           <span class="email-icon">📧</span> Email
+         </a>
+       </div>
     </div>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
-      <a href="#latex">Professional Writing</a>
+      <a href="#latex">Writing</a> {/* Simplified Name */}
       <a href="#education">Education</a>
       <a href="#resumes">Resumes</a>
     </nav>
   </header>
 
+<div class="container"> {/* Wrap main content in container */}
   <section id="about">
     <h2>About Me</h2>
     <p>
@@ -174,30 +408,45 @@
   <section id="projects">
     <h2>Projects</h2>
     <ul>
-      <li><img class="tech-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" />
-        <a href="https://github.com/GeorgeJohnson04/Python-Policy-Analysis-Final" target="_blank">Donald Trump Reanalysis (Python, NumPy, Pandas, Matplotlib)</a>
+      <li class="list-item">
+        <img class="item-icon tech-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" alt="Python Logo" />
+        <div class="item-content">
+          <a href="https://github.com/GeorgeJohnson04/Python-Policy-Analysis-Final" target="_blank">Donald Trump Reanalysis</a>
+          <p class="item-description">Analyzed the proposed Trump tax policy using Python (NumPy, Pandas) to assess GDP impact and visualize distributional effects with Matplotlib.</p>
+        </div>
       </li>
-      <p class="description">Analyzed the proposed Trump tax policy using Python to assess GDP impact and visualize distributional effects with Matplotlib.</p>
 
-      <li><img class="tech-logo" src="https://icon.icepanel.io/Technology/svg/RStudio.svg" />
-        <a href="https://github.com/GeorgeJohnson04/R-Project-Replication-and-Reanalysis" target="_blank">Immigration and Crime Rate Reanalysis (R)</a>
+      <li class="list-item">
+        <img class="item-icon tech-logo" src="https://icon.icepanel.io/Technology/svg/RStudio.svg" alt="R Logo" />
+         <div class="item-content">
+            <a href="https://github.com/GeorgeJohnson04/R-Project-Replication-and-Reanalysis" target="_blank">Immigration and Crime Rate Reanalysis</a>
+            <p class="item-description">Reproduced and extended an academic study in R to test whether immigration correlates with crime across U.S. cities.</p>
+         </div>
       </li>
-      <p class="description">Reproduced and extended an academic study in R to test whether immigration correlates with crime across U.S. cities.</p>
 
-      <li><img class="tech-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Matlab_Logo.png/960px-Matlab_Logo.png" alt="MATLAB Logo" />
-        <a href="https://github.com/GeorgeJohnson04/MATLAB-Donald-Trump-Simulation-Final" target="_blank">Donald Trump Simulation (MATLAB)</a>
+      <li class="list-item">
+        <img class="item-icon tech-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Matlab_Logo.png/960px-Matlab_Logo.png" alt="MATLAB Logo" />
+        <div class="item-content">
+          <a href="https://github.com/GeorgeJohnson04/MATLAB-Donald-Trump-Simulation-Final" target="_blank">Donald Trump Simulation</a>
+          <p class="item-description">Built an interactive simulation using MATLAB to model labor market impacts of proposed tariffs under various assumptions.</p>
+        </div>
       </li>
-      <p class="description">Built an interactive simulation using MATLAB to model labor market impacts of proposed tariffs under various assumptions.</p>
 
-      <li><img class="tech-logo" src="stata logo.png" />
-        <a href="https://github.com/GeorgeJohnson04/STATA-Infant-Mortality-VS-GDP" target="_blank">Infant Mortality and its Correlation to GDP (Stata)</a>
-      </li>
-      <p class="description">Used multivariate regression in Stata to explore global links between GDP and infant mortality rates.</p>
+       <li class="list-item">
+         <img class="item-icon tech-logo" src="stata logo.png" alt="Stata Logo"/> {/* Added alt text */}
+         <div class="item-content">
+             <a href="https://github.com/GeorgeJohnson04/STATA-Infant-Mortality-VS-GDP" target="_blank">Infant Mortality and its Correlation to GDP</a>
+             <p class="item-description">Used multivariate regression in Stata to explore global links between GDP and infant mortality rates.</p>
+         </div>
+       </li>
 
-      <li><img class="tech-logo" src="Excel Logo.jpg" />
-        <a href="https://github.com/GeorgeJohnson04/EXCEL-Proficiency" target="_blank">Excel Projects</a>
-      </li>
-      <p class="description">Compiled advanced Excel projects involving dashboards, data cleaning, and business scenario modeling.</p>
+       <li class="list-item">
+         <img class="item-icon tech-logo" src="Excel Logo.jpg" alt="Excel Logo" /> {/* Added alt text */}
+         <div class="item-content">
+            <a href="https://github.com/GeorgeJohnson04/EXCEL-Proficiency" target="_blank">Excel Projects</a>
+            <p class="item-description">Compiled advanced Excel projects involving dashboards, data cleaning, and business scenario modeling.</p>
+         </div>
+       </li>
     </ul>
     <div class="back-to-top"><a href="#top">↑ Back to Top</a></div>
   </section>
@@ -205,31 +454,66 @@
   <section id="experience">
     <h2>Experience</h2>
     <ul>
-      <li><img src="poliquicks_logo.jpg" /><strong>Poliquicks</strong> – Data Analyst / Business Analyst</li>
-      <p class="description">Transformed voter survey data into strategic dashboards for a political startup, improving outreach efficiency by 30%.</p>
+       <li class="list-item">
+         <img class="item-icon" src="poliquicks_logo.jpg" alt="Poliquicks Logo" /> {/* Added alt text */}
+         <div class="item-content">
+             <strong>Poliquicks</strong> – Data Analyst / Business Analyst
+             <p class="item-description">Transformed voter survey data into strategic dashboards for a political startup, improving outreach efficiency by 30%.</p>
+         </div>
+       </li>
 
-      <li><img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Seal_of_Harris_County%2C_Texas.svg" /><strong>Harris County Treasury</strong> – Financial Analyst / Operations Intern</li>
-      <p class="description">Supported asset reconciliation and public fund reporting while streamlining spreadsheet workflows for county finance staff.</p>
+       <li class="list-item">
+         <img class="item-icon" src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Seal_of_Harris_County%2C_Texas.svg" alt="Harris County Seal" />
+         <div class="item-content">
+             <strong>Harris County Treasury</strong> – Financial Analyst / Operations Intern
+             <p class="item-description">Supported asset reconciliation and public fund reporting while streamlining spreadsheet workflows for county finance staff.</p>
+         </div>
+       </li>
 
-      <li><img src="Asia Society logo.png" /><strong>Asia Society</strong> – Financial Analyst / Business Analyst</li>
-      <p class="description">Conducted budget analysis and program impact evaluations, helping secure new grants and partnerships for nonprofit operations.</p>
+       <li class="list-item">
+         <img class="item-icon" src="Asia Society logo.png" alt="Asia Society Logo" /> {/* Added alt text */}
+         <div class="item-content">
+             <strong>Asia Society</strong> – Financial Analyst / Business Analyst
+             <p class="item-description">Conducted budget analysis and program impact evaluations, helping secure new grants and partnerships for nonprofit operations.</p>
+         </div>
+       </li>
 
-      <li><img src="https://fp.freshprints.com/assets/logos/fp_vertical.png" /><strong>Fresh Prints</strong> – Campus Manager</li>
-      <p class="description">Led B2B and student org sales, exceeding apparel revenue targets by 60% through cold outreach and vendor relationship building.</p>
+       <li class="list-item">
+         <img class="item-icon" src="https://fp.freshprints.com/assets/logos/fp_vertical.png" alt="Fresh Prints Logo" />
+         <div class="item-content">
+            <strong>Fresh Prints</strong> – Campus Manager
+            <p class="item-description">Led B2B and student org sales, exceeding apparel revenue targets by 60% through cold outreach and vendor relationship building.</p>
+         </div>
+       </li>
 
-      <li><img src="23 Global Logo.jpg" /><strong>23 Global</strong> – Marketing / Recruiting Intern</li>
-      <p class="description">Generated digital content and streamlined applicant tracking for the recruiting team, leading to a 40% increase in sign-ups.</p>
+       <li class="list-item">
+         <img class="item-icon" src="23 Global Logo.jpg" alt="23 Global Logo" /> {/* Added alt text */}
+         <div class="item-content">
+            <strong>23 Global</strong> – Marketing / Recruiting Intern
+            <p class="item-description">Generated digital content and streamlined applicant tracking for the recruiting team, leading to a 40% increase in sign-ups.</p>
+         </div>
+       </li>
     </ul>
     <div class="back-to-top"><a href="#top">↑ Back to Top</a></div>
   </section>
 
-  <section id="latex">
+  <section id="latex"> {/* Renamed ID slightly */}
     <h2>Professional Writing</h2>
     <ul>
-      <li><img class="tech-logo" src="Overleaf logo.png" />
-        <a href="https://github.com/GeorgeJohnson04/LaTeX-Experience" target="_blank">Projects Written Using LaTeX</a>
+      <li class="list-item">
+        <img class="item-icon tech-logo" src="Overleaf logo.png" alt="Overleaf Logo" /> {/* Added alt text */}
+        <div class="item-content">
+          <a href="https://github.com/GeorgeJohnson04/LaTeX-Experience" target="_blank">Projects Written Using LaTeX</a>
+          {/* No description needed if the title is clear */}
+        </div>
       </li>
-      <li>📝 <a href="https://drive.google.com/drive/folders/1i1NUXGgcwxxHm_an24GuzDCSm4ifE198?usp=sharing" target="_blank">Non LaTeX Writing Samples</a></li>
+       <li class="list-item">
+         {/* Using a placeholder or no icon if none fits well */}
+          <img class="item-icon" src="" alt="" style="visibility: hidden;"/> {/* Keep layout consistent */}
+          <div class="item-content">
+            <a href="https://drive.google.com/drive/folders/1i1NUXGgcwxxHm_an24GuzDCSm4ifE198?usp=sharing" target="_blank">Other Writing Samples</a>
+          </div>
+       </li>
     </ul>
     <div class="back-to-top"><a href="#top">↑ Back to Top</a></div>
   </section>
@@ -237,29 +521,30 @@
   <section id="education">
     <h2>Education</h2>
 
-    <div style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px;">
-      <img src="Johns%20Hopkins%20Logo.png" alt="Johns Hopkins University" style="height: 40px; margin-top: 3px;">
-      <div>
-        <strong>Johns Hopkins University</strong><br>
+    <div class="education-entry">
+      <img class="education-logo" src="Johns%20Hopkins%20Logo.png" alt="Johns Hopkins University Logo">
+      <div class="education-details">
+        <strong>Johns Hopkins University</strong>
         M.S. in Applied Economics (2025 – Present)
-        <ul style="margin: 6px 0 0 20px; padding-left: 0;">
+        <ul>
           <li>Focus: Financial Economics</li>
         </ul>
       </div>
     </div>
 
-    <div style="display: flex; align-items: flex-start; gap: 15px;">
-      <img src="https://www.uh.edu/brand/_img/uh_red.png" alt="University of Houston" style="height: 40px; margin-top: 3px;">
-      <div>
-        <strong>University of Houston</strong><br>
+    <div class="education-entry">
+      <img class="education-logo" src="https://www.uh.edu/brand/_img/uh_red.png" alt="University of Houston Logo">
+      <div class="education-details">
+        <strong>University of Houston</strong>
         B.S. in Economics & Public Policy (2022 – 2025)
-        <ul style="margin: 6px 0 0 20px; padding-left: 0;">
+        <ul>
           <li><strong>Economics Society</strong>: Lead Data Analyst</li>
           <li><strong>Coog Esports</strong>: Player and Team Analyst</li>
           <li><strong>Code [COOGS]</strong>: SQL Database Debugger</li>
         </ul>
       </div>
     </div>
+     <div class="back-to-top"><a href="#top">↑ Back to Top</a></div> {/* Added back to top here too */}
   </section>
 
   <section id="resumes">
@@ -268,7 +553,10 @@
       <li><a href="George%20Johnson%20Sales%20Resume.pdf" target="_blank">Sales Resume</a></li>
       <li><a href="George%20Johnson%20Analytics%20Resume.pdf" target="_blank">Analytics Resume</a></li>
     </ul>
-    <div class="back-to-top"><a href="#top">↑ Back to Top</a></div>
+     <div class="back-to-top"><a href="#top">↑ Back to Top</a></div>
   </section>
+
+</div> {/* Close .container */}
+
 </body>
 </html>
