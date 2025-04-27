@@ -9,15 +9,86 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .profile-pic-placeholder {
+            width: 80px; /* Adjust size as needed */
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-image: url('professional picture.jpeg'); /* Path to your image */
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto 15px;
+        }
+        .profile-pic-placeholder.has-image {
+            background-color: transparent; /* Hide the placeholder background */
+        }
+        .profile-pic-placeholder.has-image::before {
+            content: ''; /* Ensure it doesn't interfere with the image */
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .project-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px var(--shadow-light);
+            border: 1px solid var(--border-color);
+        }
+        .project-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .project-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        .project-card h3 {
+            margin: 0;
+            color: var(--text-heading);
+        }
+        .project-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: var(--text-body);
+        }
+        .project-card p i {
+            color: var(--accent-color);
+            margin-right: 5px;
+        }
+        .project-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+        .project-link:hover {
+            background-color: var(--primary-dark);
+        }
+        .project-link i {
+            margin-left: 5px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-         <aside class="sidebar">
+        <aside class="sidebar">
             <div class="sidebar-content">
                 <div class="profile-info">
-                    <div class="profile-pic-placeholder">GTJ</div>
+                    <div class="profile-pic-placeholder has-image"></div>
                     <h1>George T. Johnson</h1>
-                     <p class="tagline">Data Analyst & Financial Analyst</p>
+                    <p class="tagline">Data Analyst & Financial Analyst</p>
                 </div>
                 <nav class="main-nav">
                     <ul>
@@ -25,12 +96,11 @@
                         <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
                         <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
                         <li><a href="projects.html" class="active"><i class="fas fa-laptop-code"></i> Projects</a></li>
-                        <li><a href="skills.html"><i class="fas fa-cogs"></i> Skills</a></li>
-                         <li><a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
+                        <li><a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
                         <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
                     </ul>
                 </nav>
-                 <div class="sidebar-footer">
+                <div class="sidebar-footer">
                     <div class="social-links">
                         <a href="https://linkedin.com/in/george-johnson2004" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/georgejohnson04" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -38,10 +108,10 @@
                         <a href="mailto:George.johnson022004@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                      <div class="resume-links">
-                        <a href="resumes/George T Johnson Analytics Resume.pdf" target="_blank" class="resume-btn">Analytics Resume <i class="fas fa-download"></i></a>
-                        <a href="resumes/George T Johnson Sales Resume.pdf" target="_blank" class="resume-btn">Sales Resume <i class="fas fa-download"></i></a>
+                         <a href="resumes/George T Johnson Analytics Resume.pdf" target="_blank" class="resume-btn">Analytics Resume <i class="fas fa-download"></i></a>
+                         <a href="resumes/George T Johnson Sales Resume.pdf" target="_blank" class="resume-btn">Sales Resume <i class="fas fa-download"></i></a>
                      </div>
-                    <p class="copyright">&copy; 2025 George T. Johnson</p>
+                     <p class="copyright">&copy; 2025 George T. Johnson</p>
                 </div>
             </div>
         </aside>
@@ -52,71 +122,71 @@
                  <div class="project-grid">
                      <div class="project-card">
                          <div class="project-header">
-                             <i class="fab fa-python project-icon"></i>
-                             <h3>Python Policy Analysis Final Project</h3>
+                              <i class="fab fa-python project-icon"></i>
+                              <h3>Python Policy Analysis Final Project</h3>
                          </div>
-                         <p>Associated with University of Houston (Jan 2025 - Apr 2025)[cite: 19, 48]. Modeled macroeconomic impacts of fiscal/trade policy shifts on GDP and wealth inequality using Python (NumPy, Pandas, Matplotlib)[cite: 19, 48]. Developed data visualizations and probability models[cite: 20]. Delivered actionable insights through a comprehensive report[cite: 21].</p>
-                         <p><i>Skills: Python, NumPy, Pandas, Matplotlib, Data Visualization, Policy Analysis [cite: 19, 20, 48]</i></p>
+                         <p>Associated with University of Houston (Jan 2025 - Apr 2025). Modeled macroeconomic impacts of fiscal/trade policy shifts on GDP and wealth inequality using Python (NumPy, Pandas, Matplotlib). Developed data visualizations and probability models. Delivered actionable insights through a comprehensive report.</p>
+                         <p><i>Skills: Python, NumPy, Pandas, Matplotlib, Data Visualization, Policy Analysis</i></p>
                          <a href="https://github.com/GeorgeJohnson04/Python-Policy-Analysis-Final" target="_blank" class="project-link">View on GitHub <i class="fas fa-external-link-alt"></i></a>
                      </div>
                       <div class="project-card">
-                         <div class="project-header">
-                             <i class="fas fa-square-root-alt project-icon"></i> <h3>MATLAB - Donald Trump Tax Simulation</h3>
-                         </div>
-                         <p>Associated with University of Houston (Sep 2024 - Dec 2024)[cite: 22, 50]. Simulated tax and tariff policy changes on GDP, income distribution, and economic inequality using MATLAB[cite: 22, 50]. Implemented simulated project graphs for in-depth analysis and visualization[cite: 22, 50].</p>
-                         <p><i>Skills: MATLAB, Data Simulation, Economic Modeling, Data Visualization [cite: 22, 50]</i></p>
-                         <a href="https://github.com/GeorgeJohnson04/MATLAB-Donald-Trump-Simulation-Final" target="_blank" class="project-link">View on GitHub <i class="fas fa-external-link-alt"></i></a>
-                     </div>
-                      <div class="project-card">
-                         <div class="project-header">
-                             <i class="fab fa-r-project project-icon"></i>
-                             <h3>R - Employment on Crime and Prison Data Replication</h3>
-                         </div>
-                         <p>Associated with University of Houston (Sep 2024 - Dec 2024)[cite: 23, 49]. Analyzed over 100,000 data points using R and fixed-effects regression[cite: 23, 49]. Designed 8 econometric models with demographic controls, clustered errors, and weighted variables[cite: 23, 49].</p>
-                         <p><i>Skills: R, RStudio, Econometrics, Fixed-Effects Regression, Policy Analysis, LaTeX [cite: 23, 49]</i></p>
-                         <a href="https://github.com/GeorgeJohnson04/R-Project-Replication-and-Reanalysis" target="_blank" class="project-link">View on GitHub <i class="fas fa-external-link-alt"></i></a>
-                     </div>
-                     <div class="project-card">
-                         <div class="project-header">
-                              <i class="fas fa-chart-line project-icon"></i> <h3>STATA - Infant Mortality on GDP Data Interpretation</h3>
-                         </div>
-                         <p>Associated with University of Houston (Feb/Mar 2024 - May 2024)[cite: 23, 51]. Examined the impact of under-five mortality (1950-2018) on GDP per capita[cite: 23]. Employed STATA to model GDP's impact on child mortality, improving accuracy ($R^2$ from 0.099 to 0.392)[cite: 23, 52]. Performed T-tests[cite: 52].</p>
-                         <p><i>Skills: STATA, Regression Analysis, Econometrics, T-tests [cite: 23, 51, 52]</i></p>
-                         <a href="https://github.com/GeorgeJohnson04/STATA-Infant-Mortality-VS-GDP" target="_blank" class="project-link">View on GitHub <i class="fas fa-external-link-alt"></i></a>
-                     </div>
-                     <div class="project-card">
-                         <div class="project-header">
-                            <i class="fas fa-landmark project-icon"></i> <h3>Harris County Spending Analysis</h3>
-                         </div>
-                         <p>Associated with Harris County Treasury Internship (Jan 2025 - Apr 2025)[cite: 6]. This project looked to breakdown MUD district spending in Harris County to determine oddities. Presented to treasurer at end of internship[cite: 6].</p>
-                         <p><i>Skills: Excel, Data Analysis, Financial Reporting [cite: 6]</i></p>
-                         </div>
-                     <div class="project-card">
-                        <div class="project-header">
-                            <i class="fas fa-brain project-icon"></i> <h3>AI and Automation's Effect on Foreign Labor Research</h3>
+                          <div class="project-header">
+                              <i class="fas fa-square-root-alt project-icon"></i> <h3>MATLAB - Donald Trump Tax Simulation</h3>
+                          </div>
+                          <p>Associated with University of Houston (Sep 2024 - Dec 2024). Simulated tax and tariff policy changes on GDP, income distribution, and economic inequality using MATLAB. Implemented simulated project graphs for in-depth analysis and visualization.</p>
+                          <p><i>Skills: MATLAB, Data Simulation, Economic Modeling, Data Visualization</i></p>
+                          <a href="https://github.com/GeorgeJohnson04/MATLAB-Donald-Trump-Simulation-Final" target="_blank" class="project-link">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+                      </div>
+                       <div class="project-card">
+                           <div class="project-header">
+                               <i class="fab fa-r-project project-icon"></i>
+                               <h3>R - Employment on Crime and Prison Data Replication</h3>
+                           </div>
+                           <p>Associated with University of Houston (Sep 2024 - Dec 2024). Analyzed over 100,000 data points using R and fixed-effects regression. Designed 8 econometric models with demographic controls, clustered errors, and weighted variables.</p>
+                           <p><i>Skills: R, RStudio, Econometrics, Fixed-Effects Regression, Policy Analysis, LaTeX</i></p>
+                           <a href="https://github.com/GeorgeJohnson04/R-Project-Replication-and-Reanalysis" target="_blank" class="project-link">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+                       </div>
+                       <div class="project-card">
+                           <div class="project-header">
+                                <i class="fas fa-chart-line project-icon"></i> <h3>STATA - Infant Mortality on GDP Data Interpretation</h3>
+                           </div>
+                           <p>Associated with University of Houston (Feb/Mar 2024 - May 2024). Examined the impact of under-five mortality (1950-2018) on GDP per capita. Employed STATA to model GDP's impact on child mortality, improving accuracy ($R^2$ from 0.099 to 0.392). Performed T-tests.</p>
+                           <p><i>Skills: STATA, Regression Analysis, Econometrics, T-tests</i></p>
+                           <a href="https://github.com/GeorgeJohnson04/STATA-Infant-Mortality-VS-GDP" target="_blank" class="project-link">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+                       </div>
+                       <div class="project-card">
+                           <div class="project-header">
+                                <i class="fas fa-landmark project-icon"></i> <h3>Harris County Spending Analysis</h3>
+                           </div>
+                           <p>Associated with Harris County Treasury Internship (Jan 2025 - Apr 2025). This project looked to breakdown MUD district spending in Harris County to determine oddities. Presented to treasurer at end of internship.</p>
+                           <p><i>Skills: Excel, Data Analysis, Financial Reporting</i></p>
+                           </div>
+                       <div class="project-card">
+                            <div class="project-header">
+                                 <i class="fas fa-brain project-icon"></i> <h3>AI and Automation's Effect on Foreign Labor Research</h3>
+                            </div>
+                            <p>Associated with University of Houston SURF Program (Apr 2024 - Sep 2024). Performed econometric analysis on over 100,000 data points using R, STATA, and EXCEL. Delivered a research presentation simplifying complex findings.</p>
+                            <p><i>Skills: Econometrics, R, STATA, Excel, Research, Presentation Skills</i></p>
+                            <a href="https://www.linkedin.com/in/george-johnson2004/details/projects/" target="_blank" class="project-link">View Research on LinkedIn <i class="fas fa-external-link-alt"></i></a>
                         </div>
-                        <p>Associated with University of Houston SURF Program (Apr 2024 - Sep 2024)[cite: 9]. Performed econometric analysis on over 100,000 data points using R, STATA, and EXCEL[cite: 9]. Delivered a research presentation simplifying complex findings[cite: 10].</p>
-                         <p><i>Skills: Econometrics, R, STATA, Excel, Research, Presentation Skills [cite: 9, 10]</i></p>
-                         <a href="https://www.linkedin.com/in/george-johnson2004/details/projects/" target="_blank" class="project-link">View Research on LinkedIn <i class="fas fa-external-link-alt"></i></a>
-                     </div>
-                     <div class="project-card">
-                         <div class="project-header">
-                             <i class="fas fa-file-excel project-icon"></i>
-                             <h3>Advanced Excel Projects</h3>
-                         </div>
-                         <p>Compiled projects involving dashboards, data cleaning, VBA automation, and business scenario modeling in Excel[cite: 6, 12, 36, 45, 47].</p>
-                          <p><i>Skills: Excel (Advanced), VBA, Dashboards, Data Cleaning, Financial Modeling [cite: 6, 12, 36, 45, 47]</i></p>
-                         <a href="https://github.com/GeorgeJohnson04/EXCEL-Proficiency" target="_blank" class="project-link">View on GitHub <i class="fas fa-external-link-alt"></i></a>
-                     </div>
-                     <div class="project-card">
-                         <div class="project-header">
-                              <i class="fab fa-latex project-icon"></i>
-                              <h3>LaTeX Professional Writing</h3>
-                         </div>
-                         <p>Authored various reports and analyses, including econometric research papers[cite: 23], using LaTeX for professional document preparation.</p>
-                         <p><i>Skills: LaTeX, Overleaf, Technical Writing [cite: 23, 52]</i></p>
-                         <a href="https://github.com/GeorgeJohnson04/LaTeX-Experience" target="_blank" class="project-link">View on GitHub <i class="fas fa-external-link-alt"></i></a>
-                     </div>
+                       <div class="project-card">
+                           <div class="project-header">
+                                <i class="fas fa-file-excel project-icon"></i>
+                                <h3>Advanced Excel Projects</h3>
+                           </div>
+                           <p>Compiled projects involving dashboards, data cleaning, VBA automation, and business scenario modeling in Excel.</p>
+                            <p><i>Skills: Excel (Advanced), VBA, Dashboards, Data Cleaning, Financial Modeling</i></p>
+                           <a href="https://github.com/GeorgeJohnson04/EXCEL-Proficiency" target="_blank" class="project-link">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+                       </div>
+                       <div class="project-card">
+                           <div class="project-header">
+                                <i class="fas fa-file-alt project-icon"></i>
+                                <h3>LaTeX Professional Writing</h3>
+                           </div>
+                           <p>Authored various reports and analyses, including econometric research papers, using LaTeX for professional document preparation.</p>
+                           <p><i>Skills: LaTeX, Overleaf, Technical Writing</i></p>
+                           <a href="https://github.com/GeorgeJohnson04/LaTeX-Experience" target="_blank" class="project-link">View on GitHub <i class="fas fa-external-link-alt"></i></a>
+                       </div>
                  </div>
              </section>
         </main>
