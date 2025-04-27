@@ -9,13 +9,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .profile-pic-placeholder {
+            width: 80px; /* Adjust size as needed */
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-image: url('professional picture.jpeg'); /* Path to your image */
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto 15px;
+        }
+        .profile-pic-placeholder.has-image {
+            background-color: transparent; /* Hide the placeholder background */
+        }
+        .profile-pic-placeholder.has-image::before {
+            content: ''; /* Ensure it doesn't interfere with the image */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <aside class="sidebar">
             <div class="sidebar-content">
                 <div class="profile-info">
-                    <div class="profile-pic-placeholder">GTJ</div>
+                    <div class="profile-pic-placeholder has-image"></div>
                     <h1>George T. Johnson</h1>
                     <p class="tagline">Data Analyst & Financial Analyst</p>
                 </div>
@@ -24,8 +42,7 @@
                         <li><a href="index.html" class="active"><i class="fas fa-user"></i> Home</a></li>
                         <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
                         <li><a href="projects.html"><i class="fas fa-laptop-code"></i> Projects</a></li>
-                        <li><a href="skills.html"><i class="fas fa-cogs"></i> Skills</a></li>
-                         <li><a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
+                        <li><a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
                         <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
                     </ul>
                 </nav>
