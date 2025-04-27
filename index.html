@@ -11,18 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Add this style potentially to your style.css */
-        .profile-pic {
-            width: 100px; /* Adjust size as needed */
-            height: 100px; /* Adjust size as needed */
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 3px solid #007bff; /* Example border color, match your theme */
-            display: block; /* Center the image if needed */
-            margin-left: auto;
-            margin-right: auto;
-       }
-        .profile-info { text-align: center; } /* Center text below image */
+        .profile-pic { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #007bff; display: block; margin-left: auto; margin-right: auto; }
+        .profile-info { text-align: center; }
+        .footer-contact-info { text-align: center; margin-top: 15px; margin-bottom: 10px; font-size: 0.9em; }
+        .footer-contact-info a { margin: 0 8px; color: var(--text-color); text-decoration: none; }
+        .footer-contact-info a:hover { color: var(--primary-color); }
+        .footer-contact-info i { margin-right: 4px; }
    </style>
 </head>
 <body>
@@ -54,12 +48,17 @@
                          <a href="resumes/George T Johnson Analytics Resume.pdf" target="_blank" class="resume-btn">Analytics Resume <i class="fas fa-download"></i></a>
                          <a href="resumes/George T Johnson Sales Resume.pdf" target="_blank" class="resume-btn">Sales Resume <i class="fas fa-download"></i></a>
                        </div>
+                     <div class="footer-contact-info">
+                         <a href="https://linkedin.com/in/george-johnson2004" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                         <a href="mailto:George.johnson022004@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i> Email</a>
+                     </div>
                     <p class="copyright">&copy; 2025 George T. Johnson</p>
                 </div>
             </div>
         </aside>
 
         <main class="main-content">
+            {/* */}
             <section id="about-detailed">
                 <h2 class="section-title">About Me</h2>
                 <p>As a dedicated student completing a Bachelor of Science in Economics and Public Policy from the University of Houston, I have honed my analytical and research skills to tackle real-world challenges. This journey fueled my passion for data analysis, policy research, and problem-solving. I am detail-oriented with experience in Python, SQL, R, Excel, and advanced statistics, seeking to apply data analysis and automation skills to support decision-making, streamline workflows, and drive business impacts.</p>
