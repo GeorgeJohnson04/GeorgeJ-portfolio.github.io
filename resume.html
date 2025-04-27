@@ -9,15 +9,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .profile-pic-placeholder {
+            width: 80px; /* Adjust size as needed */
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-image: url('professional picture.jpeg'); /* Path to your image */
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto 15px;
+        }
+        .profile-pic-placeholder.has-image {
+            background-color: transparent; /* Hide the placeholder background */
+        }
+        .profile-pic-placeholder.has-image::before {
+            content: ''; /* Ensure it doesn't interfere with the image */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-         <aside class="sidebar">
+        <aside class="sidebar">
             <div class="sidebar-content">
                 <div class="profile-info">
-                    <div class="profile-pic-placeholder">GTJ</div>
+                    <div class="profile-pic-placeholder has-image"></div>
                     <h1>George T. Johnson</h1>
-                     <p class="tagline">Data Analyst & Financial Analyst</p>
+                    <p class="tagline">Data Analyst & Financial Analyst</p>
                 </div>
                 <nav class="main-nav">
                     <ul>
@@ -25,12 +43,11 @@
                         <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
                         <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
                         <li><a href="projects.html"><i class="fas fa-laptop-code"></i> Projects</a></li>
-                        <li><a href="skills.html"><i class="fas fa-cogs"></i> Skills</a></li>
-                         <li><a href="resume.html" class="active"><i class="fas fa-file-alt"></i> Resume</a></li>
+                        <li><a href="resume.html" class="active"><i class="fas fa-file-alt"></i> Resume</a></li>
                         <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
                     </ul>
                 </nav>
-                 <div class="sidebar-footer">
+                <div class="sidebar-footer">
                     <div class="social-links">
                         <a href="https://linkedin.com/in/george-johnson2004" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/georgejohnson04" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -38,36 +55,36 @@
                         <a href="mailto:George.johnson022004@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                      <div class="resume-links">
-                        <a href="resumes/George T Johnson Analytics Resume.pdf" target="_blank" class="resume-btn">Analytics Resume <i class="fas fa-download"></i></a>
-                        <a href="resumes/George T Johnson Sales Resume.pdf" target="_blank" class="resume-btn">Sales Resume <i class="fas fa-download"></i></a>
+                         <a href="resumes/George T Johnson Analytics Resume.pdf" target="_blank" class="resume-btn">Analytics Resume <i class="fas fa-download"></i></a>
+                         <a href="resumes/George T Johnson Sales Resume.pdf" target="_blank" class="resume-btn">Sales Resume <i class="fas fa-download"></i></a>
                      </div>
-                    <p class="copyright">&copy; 2025 George T. Johnson</p>
+                     <p class="copyright">&copy; 2025 George T. Johnson</p>
                 </div>
             </div>
         </aside>
 
         <main class="main-content">
             <section id="resume-download">
-                 <h2 class="section-title">Download Resumes</h2>
-                 <p>For your convenience, you can download my resumes directly using the links below or find them in the sidebar.</p>
+                <h2 class="section-title">Download Resumes</h2>
+                <p>For your convenience, you can download my resumes directly using the links below or find them in the sidebar.</p>
 
-                 <div class="resume-download-links">
-                     <div class="resume-item">
-                         <h3>Analytics Resume</h3>
-                         <p>Focuses on data analysis capabilities, technical proficiencies (Python, R, SQL, Stata, Excel, Power BI), and analytical project experience[cite: 41, 42, 43, 52].</p>
-                         <a href="resumes/George T Johnson Analytics Resume.pdf" target="_blank" class="resume-btn large-btn">
+                <div class="resume-download-links">
+                    <div class="resume-item">
+                        <h3>Analytics Resume</h3>
+                        <p>Focuses on data analysis capabilities, technical proficiencies (Python, R, SQL, Stata, Excel, Power BI), and analytical project experience.</p>
+                        <a href="resumes/George T Johnson Analytics Resume.pdf" target="_blank" class="resume-btn large-btn">
                             Download Analytics Resume <i class="fas fa-download"></i>
-                         </a>
-                     </div>
-                     <div class="resume-item">
-                         <h3>Sales Resume</h3>
-                         <p>Highlights achievements in sales, client relations, B2B/B2C outreach, market analysis, and revenue generation[cite: 32, 33, 34, 40].</p>
-                         <a href="resumes/George T Johnson Sales Resume.pdf" target="_blank" class="resume-btn large-btn">
-                             Download Sales Resume <i class="fas fa-download"></i>
-                         </a>
-                     </div>
-                 </div>
-                 <style>
+                        </a>
+                    </div>
+                    <div class="resume-item">
+                        <h3>Sales Resume</h3>
+                        <p>Highlights achievements in sales, client relations, B2B/B2C outreach, market analysis, and revenue generation.</p>
+                        <a href="resumes/George T Johnson Sales Resume.pdf" target="_blank" class="resume-btn large-btn">
+                            Download Sales Resume <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                </div>
+                <style>
                     .resume-download-links { display: flex; gap: 30px; margin-top: 30px; flex-wrap: wrap; }
                     .resume-item { flex: 1; min-width: 250px; background-color: var(--card-bg); padding: 20px; border-radius: 8px; box-shadow: 0 4px 15px var(--shadow-light); border: 1px solid var(--border-color); }
                     .resume-item h3 { color: var(--primary-color); margin-bottom: 10px; }
@@ -75,7 +92,52 @@
                     .large-btn { padding: 12px 25px; font-size: 1rem; }
                 </style>
             </section>
-        </main>
-    </div>
-</body>
-</html>
+
+            <section id="skills">
+                <h2 class="section-title">Skills Overview</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Technical Skills</h3>
+                        <ul>
+                            <li><i class="fab fa-python"></i> Python (Pandas, NumPy, Matplotlib)</li>
+                            <li><i class="fab fa-r-project"></i> R & RStudio</li>
+                            <li><i class="fas fa-database"></i> SQL (PopSQL)</li>
+                            <li><i class="fas fa-chart-line"></i> STATA</li>
+                            <li><i class="fas fa-square-root-alt"></i> MATLAB</li>
+                            <li><i class="fas fa-file-code"></i> VBA (Excel Macros)</li>
+                            <li><i class="fas fa-file-excel"></i> MS Excel (Advanced)</li>
+                            <li><i class="fas fa-chart-bar"></i> Power BI</li>
+                            <li><i class="fab fa-google"></i> Google Analytics</li>
+                            <li><i class="fas fa-table"></i> Tableau</li>
+                            <li><i class="fab fa-latex"></i> LaTeX</li>
+                            <li><i class="fas fa-drafting-compass"></i> CAD (AutoCAD)</li>
+                            <li><i class="fab fa-adobe"></i> Adobe Suite (Photoshop, Creative Suite)</li>
+                            <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
+                            <li><i class="fas fa-code-branch"></i> JSON / Strapi</li>
+                            <li><i class="fab fa-windows"></i> Microsoft Office Suite (Outlook, PowerPoint)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Analytical Skills</h3>
+                        <ul>
+                            <li><i class="fas fa-search"></i> Data Analysis</li>
+                            <li><i class="fas fa-calculator"></i> Econometrics</li>
+                            <li><i class="fas fa-percent"></i> Statistical Data Analysis</li>
+                            <li><i class="fas fa-file-invoice-dollar"></i> Financial Modeling (Cost-Benefit)</li>
+                            <li><i class="fas fa-chart-pie"></i> Data Visualization</li>
+                            <li><i class="fas fa-search-dollar"></i> Market Analysis</li>
+                            <li><i class="fas fa-gavel"></i> Policy Analysis</li>
+                            <li><i class="fas fa-book"></i> Research Skills</li>
+                            <li><i class="fas fa-lightbulb"></i> Quantitative Analysis</li>
+                            <li><i class="fas fa-check-double"></i> Data Integrity / Cleaning</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Business & Sales Skills</h3>
+                        <ul>
+                            <li><i class="fas fa-chart-area"></i> Business Insights</li>
+                            <li><i class="fas fa-bullseye"></i> KPI Identification & Tracking</li>
+                            <li><i class="fas fa-cogs"></i> Operational Analysis</li>
+                            <li><i class="fas fa-wallet"></i> Budget Analysis & Management</li>
+                            <li><i class="fas fa-users"></i> Client Relations</li>
+                            <li><i class="fas fa-network-wired"></i> B2B/B
