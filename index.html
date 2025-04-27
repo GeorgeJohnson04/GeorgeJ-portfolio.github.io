@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>George T. Johnson | Data Analyst & Financial Analyst</title>
+    <title>George T. Johnson | Data & Financial Advisor</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,20 +11,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <style>
         .profile-pic-placeholder {
-            width: 80px; /* Adjust size as needed */
-            height: 80px;
+            width: 150px; /* Adjust size as needed */
+            height: 150px;
             border-radius: 50%;
             overflow: hidden;
-            background-image: url('professional picture.jpg'); /* Path to your image */
+            background-image: url('professional picture.jpg'); /* Corrected extension */
             background-size: cover;
             background-position: center;
-            margin: 0 auto 15px;
+            margin: 0 auto 20px;
+            border: 5px solid var(--accent-color);
+            box-shadow: 0 2px 10px var(--shadow-light);
         }
         .profile-pic-placeholder.has-image {
             background-color: transparent; /* Hide the placeholder background */
         }
         .profile-pic-placeholder.has-image::before {
             content: ''; /* Ensure it doesn't interfere with the image */
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--text-heading);
+        }
+        .hero p.tagline {
+            font-size: 1.2rem;
+            color: var(--text-body);
+            margin-bottom: 25px;
+        }
+        .hero .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .hero .cta-button:hover {
+            background-color: var(--primary-dark);
+        }
+        .hero .cta-button i {
+            margin-left: 8px;
+        }
+        .section-intro {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section-intro h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .section-intro p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-body);
         }
     </style>
 </head>
@@ -39,11 +87,11 @@
                 </div>
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="index.html" class="active"><i class="fas fa-user"></i> Home</a></li>
+                        <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
                         <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
                         <li><a href="projects.html"><i class="fas fa-laptop-code"></i> Projects</a></li>
                         <li><a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
-                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
                     </ul>
                 </nav>
                 <div class="sidebar-footer">
@@ -63,47 +111,55 @@
         </aside>
 
         <main class="main-content">
-            <section id="about-detailed">
-                <h2 class="section-title">About Me</h2>
-                <p>As a dedicated student completing a Bachelor of Science in Economics and Public Policy from the University of Houston, I have honed my analytical and research skills to tackle real-world challenges. This journey fueled my passion for data analysis, policy research, and problem-solving. I am detail-oriented with experience in Python, SQL, R, Excel, and advanced statistics, seeking to apply data analysis and automation skills to support decision-making, streamline workflows, and drive business impacts.</p>
-                <p>I am a goal-driven professional with a strong background in data analysis, business operations, and client outreach. My experience spans the public, private, and nonprofit sectors, where I've developed skills in data modeling (Python, R, Stata, MATLAB), quantitative analysis, and deriving actionable insights. I excel at translating data into strategic decisions, whether tracking financial flows, optimizing market targeting, automating processes, or evaluating policy impacts. I am passionate about leveraging analytical rigor to solve real-world problems and drive meaningful change.</p>
-                <p>As I begin my Master's in Applied Economics at Johns Hopkins University (Est. Graduation 2026) with a focus on Financial Economics, I am eager to further develop my expertise and apply my knowledge to drive informed decision-making. I am committed to using my skills to help companies grow, innovate, and succeed.</p>
+            <section class="hero">
+                <div class="profile-pic-placeholder has-image"></div>
+                <h1>Hello, I'm George T. Johnson</h1>
+                <p class="tagline">A Data-Driven Analyst Passionate About Insights and Financial Strategies</p>
+                <a href="about.html" class="cta-button">Learn More <i class="fas fa-arrow-right"></i></a>
             </section>
 
-            <section id="education-detailed">
-                 <h2 class="section-title">Education</h2>
-                 <div class="timeline">
-                     <div class="timeline-item">
-                         <div class="timeline-date">Est. 2026</div>
-                         <div class="timeline-content">
-                             <h3>M.S. in Applied Economics</h3>
-                             <p>Johns Hopkins University, Advanced Academic Programs</p>
-                             <ul>
-                                 <li>Focus: Financial Economics</li>
-                             </ul>
-                         </div>
-                     </div>
-                     <div class="timeline-item">
-                         <div class="timeline-date">Aug 2022 - May 2025</div>
-                         <div class="timeline-content">
-                             <h3>B.S. in Economics & Public Policy</h3>
-                             <p>University of Houston</p>
-                             <ul>
-                                 <li>Honors: Dean's List (Spring 2024), Certificate in Quantitative Economics</li>
-                                 <li>GPA: 3.3 (Cumulative), 3.4 (Economics), 3.6 (Public Policy)</li>
-                                 <li>Relevant Coursework: Econometrics, Statistics, Game Theory, Multivariable Calculus, Linear Algebra</li>
-                                 <li>Activities: Economics Society, Coog Esports (Analyst/Player/Coach), Code [COOGS]</li>
-                             </ul>
-                         </div>
-                     </div>
-                 </div>
-             </section>
-
-              <section id="career-focus">
-                 <h2 class="section-title">Career Focus</h2>
-                 <p>My career interests lie at the intersection of data analysis, financial analysis, and policy research. I am driven to leverage quantitative methods and analytical tools to uncover business insights, evaluate economic impacts, and inform strategic decision-making. I am particularly interested in roles where I can apply my skills in data modeling, econometrics, financial analysis, and process automation to solve complex problems in both the private and public sectors.</p>
-              </section>
+            <section class="section-intro">
+                <h2>Welcome to My Portfolio</h2>
+                <p>Here you'll find a collection of my experiences, projects, and skills in data analysis and financial analysis. I'm dedicated to leveraging data to drive informed decisions and solve complex problems. Explore my work to see how my analytical skills and financial acumen can contribute to your team or project.</p>
+            </section>
         </main>
+
+        <footer class="contact-footer">
+            <section id="contact-footer-section">
+                <h2>Get In Touch</h2>
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:George.johnson022004@gmail.com">George.johnson022004@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(732) 962-2980</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://linkedin.com/in/george-johnson2004" target="_blank">linkedin.com/in/george-johnson2004</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/georgejohnson04" target="_blank">github.com/georgejohnson04</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-link"></i>
+                        <a href="https://linktr.ee/georgejohnson04" target="_blank">Linktree Profile</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-desktop"></i>
+                        <a href="https://georgejohnson04.github.io/GeorgeJ-portfolio.github.io/" target="_blank">Portfolio Website</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Houston, TX Area</span>
+                    </div>
+                </div>
+            </section>
+            <p class="copyright">&copy; 2025 George T. Johnson</p>
+        </footer>
     </div>
 </body>
 </html>
