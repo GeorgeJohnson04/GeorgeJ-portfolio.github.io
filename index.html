@@ -111,8 +111,7 @@
         radial-gradient(ellipse 500px 400px at 105% 80%, rgba(245,158,11,0.04) 0%, transparent 60%);
       pointer-events: none; z-index: 0;
     }
-    .hero-grid {
-      position: absolute; inset: 0;
+    .hero-grid {      position: absolute; inset: 0;
       background-image:
         linear-gradient(rgba(59,130,246,0.025) 1px, transparent 1px),
         linear-gradient(90deg, rgba(59,130,246,0.025) 1px, transparent 1px);
@@ -234,7 +233,7 @@
       position: relative; height: 370px; overflow: hidden; border-radius: var(--radius);
     }
     .carousel-slide {
-      position: absolute; inset: 0; background: var(--navy-2); border: 1px solid var(--border);
+      position: absolute; inset: 0;      background: var(--navy-2); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 1.75rem;
       display: flex; flex-direction: column;
       opacity: 0; transform: translateX(30px) scale(0.97);
@@ -361,7 +360,7 @@
     section { padding: 5.5rem 2rem; position: relative; z-index: 1; }
     .section-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
     .section-label {
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+      font-size: 0.72rem; font-weight:700; letter-spacing: 0.12em;
       text-transform: uppercase; color: var(--blue); margin-bottom: 0.5rem;
       display: flex; align-items: center; gap: 0.5rem;
     }
@@ -460,7 +459,7 @@
     .exp-loc i { color: var(--blue); margin-right: 0.3rem; font-size: 0.7rem; }
     .exp-bullets { }
     .exp-bullets li {
-      font-size: 0.83rem; color: var(--text-muted); padding-left: 1.1rem; position: relative; line-height: 1.7; margin-bottom: 0.25rem;
+      font-size: 0.83rem; color: var(--text-muted); padding-left: 1.1rem;      position: relative; line-height: 1.7; margin-bottom: 0.25rem;
     }
     .exp-bullets li::before {
       content: '▸'; position: absolute; left: 0;
@@ -831,12 +830,13 @@
       <h2 class="section-title reveal">Professional Experience</h2>
       <p class="section-sub reveal">A track record across energy, finance, government, and tech sectors.</p>
       <div class="exp-grid">
+
         <div class="exp-card current reveal" style="--i:0">
           <div class="exp-dot"><i class="fas fa-bolt"></i></div>
           <div>
             <div class="exp-top">
-              <div><div class="exp-role">Commercial Analyst</div><div class="exp-company">Tidal Energy Marketing · Enbridge</div></div>
-              <div class="exp-meta"><span class="exp-date">2025 – Present</span><span class="badge-current">Current</span></div>
+              <div><div class="exp-role">Commercial Analyst</div><div class="exp-company">Tidal Energy Marketing &middot; Enbridge</div></div>
+              <div class="exp-meta"><span class="exp-date">2025 &ndash; Present</span><span class="badge-current">Current</span></div>
             </div>
             <div class="exp-loc"><i class="fas fa-map-marker-alt"></i>Houston, TX</div>
             <ul class="exp-bullets">
@@ -853,7 +853,7 @@
           <div>
             <div class="exp-top">
               <div><div class="exp-role">Financial Analyst Intern</div><div class="exp-company">Harris County Treasury Department</div></div>
-              <div class="exp-meta"><span class="exp-date">Jan 2025 – Apr 2025</span></div>
+              <div class="exp-meta"><span class="exp-date">Jan 2025 &ndash; Apr 2025</span></div>
             </div>
             <div class="exp-loc"><i class="fas fa-map-marker-alt"></i>Houston, TX</div>
             <ul class="exp-bullets">
@@ -870,9 +870,9 @@
           <div>
             <div class="exp-top">
               <div><div class="exp-role">Business Analyst</div><div class="exp-company">Poliquicks</div></div>
-              <div class="exp-meta"><span class="exp-date">Jan 2025 – Apr 2025</span></div>
+              <div class="exp-meta"><span class="exp-date">Jan 2025 &ndash; Apr 2025</span></div>
             </div>
-            <div class="exp-loc"><i class="fas fa-map-marker-alt"></i>Austin, TX · Remote</div>
+            <div class="exp-loc"><i class="fas fa-map-marker-alt"></i>Austin, TX &middot; Remote</div>
             <ul class="exp-bullets">
               <li>Identified KPIs to boost off-cycle user activity, increasing app engagement by <span class="pop">15%</span>.</li>
               <li>Delivered business insights from Google Analytics and restructured Power BI dashboards.</li>
@@ -886,9 +886,9 @@
           <div>
             <div class="exp-top">
               <div><div class="exp-role">Data Analyst</div><div class="exp-company">Poliquicks</div></div>
-              <div class="exp-meta"><span class="exp-date">Sep 2024 – Dec 2024</span></div>
+              <div class="exp-meta"><span class="exp-date">Sep 2024 &ndash; Dec 2024</span></div>
             </div>
-            <div class="exp-loc"><i class="fas fa-map-marker-alt"></i>Austin, TX · Remote</div>
+            <div class="exp-loc"><i class="fas fa-map-marker-alt"></i>Austin, TX &middot; Remote</div>
             <ul class="exp-bullets">
               <li>Developed data-driven maps to optimize user targeting during election year, boosting engagement by <span class="pop">63%</span>.</li>
               <li>Conducted market analysis supporting strategic growth decisions.</li>
@@ -902,9 +902,9 @@
           <div>
             <div class="exp-top">
               <div><div class="exp-role">Business Operations Analyst</div><div class="exp-company">Southern Esports Conference</div></div>
-              <div class="exp-meta"><span class="exp-date">Aug 2024 – Dec 2024</span></div>
+              <div class="exp-meta"><span class="exp-date">Aug 2024 &ndash; Dec 2024</span></div>
             </div>
-            <div class="exp-loc"><i class="fas fa-map-marker-alt"></i>Houston, TX · Remote</div>
+            <div class="exp-loc"><i class="fas fa-map-marker-alt"></i>Houston, TX &middot; Remote</div>
             <ul class="exp-bullets">
               <li>Created player rating algorithms for Valorant and Overwatch, later converted to Python.</li>
               <li>Automated website data updates, reducing manual errors by <span class="pop">98%</span>.</li>
@@ -918,7 +918,7 @@
           <div>
             <div class="exp-top">
               <div><div class="exp-role">Summer Undergraduate Research Fellow</div><div class="exp-company">University of Houston (SURF)</div></div>
-              <div class="exp-meta"><span class="exp-date">Apr 2024 – Sep 2024</span></div>
+              <div class="exp-meta"><span class="exp-date">Apr 2024 &ndash; Sep 2024</span></div>
             </div>
             <div class="exp-loc"><i class="fas fa-map-marker-alt"></i>Houston, TX</div>
             <ul class="exp-bullets">
@@ -934,13 +934,14 @@
           <div>
             <div class="exp-top">
               <div><div class="exp-role">Financial &amp; Market Analyst</div><div class="exp-company">Asia Society Texas Center</div></div>
-              <div class="exp-meta"><span class="exp-date">May 2024 – Aug 2024</span></div>
+              <div class="exp-meta"><span class="exp-date">May 2024 &ndash; Aug 2024</span></div>
             </div>
-            <div class="exp-loc"><i class="fas fa-map-marker-alt"></i>Houston, TX · Hybrid</div>
+            <div class="exp-loc"><i class="fas fa-map-marker-alt"></i>Houston, TX &middot; Hybrid</div>
             <ul class="exp-bullets">
               <li>Built cost-benefit models contributing to <span class="pop">43% revenue growth</span> in program initiatives.</li>
               <li>Identified untapped demographics, driving a <span class="pop">62% increase</span> in ticket sales.</li>
-              <li>Optimized survey methodologies, increasing outreach effectiveness by <span class="pop">22%</span>.</li>
+              <li>Optimized survey methodologies, increasing outreach effectiveness by <span class="pop">22%</span>.
+            </li>
             </ul>
           </div>
         </div>
@@ -950,9 +951,9 @@
           <div>
             <div class="exp-top">
               <div><div class="exp-role">HOA Policy Analyst</div><div class="exp-company">Spectrum Association Management</div></div>
-              <div class="exp-meta"><span class="exp-date">Jan 2024 – May 2024</span></div>
+              <div class="exp-meta"><span class="exp-date">Jan 2024 &ndash; May 2024</span></div>
             </div>
-            <div class="exp-loc"><i class="fas fa-map-marker-alt"></i>Houston, TX · Remote</div>
+            <div class="exp-loc"><i class="fas fa-map-marker-alt"></i>Houston, TX &middot; Remote</div>
             <ul class="exp-bullets">
               <li>Assisted HOA clients and local government in managing budgets and financial compliance.</li>
               <li>Performed policy research on municipal governance and HOA regulations.</li>
@@ -965,7 +966,7 @@
           <div>
             <div class="exp-top">
               <div><div class="exp-role">Campus Manager</div><div class="exp-company">Fresh Prints</div></div>
-              <div class="exp-meta"><span class="exp-date">Jun 2023 – Dec 2023</span></div>
+              <div class="exp-meta"><span class="exp-date">Jun 2023 &ndash; Dec 2023</span></div>
             </div>
             <div class="exp-loc"><i class="fas fa-map-marker-alt"></i>Houston, TX</div>
             <ul class="exp-bullets">
@@ -1120,7 +1121,7 @@
           <div class="edu-meta">
             <span><i class="fas fa-book"></i>Financial Economics &amp; Machine Learning</span>
             <span class="edu-gpa"><i class="fas fa-star"></i>GPA: 3.35</span>
-            <span><i class="fas fa-calendar"></i>2025 – Present</span>
+            <span><i class="fas fa-calendar"></i>2025 &ndash; Present</span>
             <span><i class="fas fa-map-marker-alt"></i>Baltimore, MD (Online)</span>
           </div>
         </div>
@@ -1130,7 +1131,7 @@
           <div class="edu-school">University of Houston</div>
           <div class="edu-meta">
             <span><i class="fas fa-award"></i>Cum Laude</span>
-            <span><i class="fas fa-calendar"></i>2021 – 2025</span>
+            <span><i class="fas fa-calendar"></i>2021 &ndash; 2025</span>
             <span><i class="fas fa-map-marker-alt"></i>Houston, TX</span>
             <span><i class="fas fa-microscope"></i>SURF Research Fellow</span>
           </div>
@@ -1147,7 +1148,7 @@
       <p class="section-sub reveal">Open to analytical opportunities, research collaborations, and professional conversations.</p>
       <div class="contact-wrapper">
         <div class="contact-info reveal-left">
-          <p>Whether you're looking for a quantitative analyst, want to discuss energy markets, or are simply interested in connecting professionally — I'd love to hear from you.</p>
+          <p>Whether you're looking for a quantitative analyst, want to discuss energy markets, or are simply interested in connecting professionally &mdash; I'd love to hear from you.</p>
           <div class="contact-items">
             <a href="mailto:George.johnson022004@gmail.com" class="contact-item">
               <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
@@ -1353,7 +1354,7 @@
 
   let currentSlide = 0;
   let autoplayTimer;
-  const SLIDE_DURATION = 4000;
+  const SLIDE_DURATION = 7000;
   let progressStart;
   let progressRaf;
 
@@ -1426,12 +1427,13 @@
   }, { threshold: 0.3 });
   carouselObserver.observe(document.querySelector('.carousel-wrapper'));
 
-  // Pause on hover
-  track.addEventListener('mouseenter', () => {
+  // Pause on hover — covers the full carousel card
+  const carouselWrapper = document.querySelector('.carousel-wrapper');
+  carouselWrapper.addEventListener('mouseenter', () => {
     cancelAnimationFrame(progressRaf);
     progressStart = performance.now() - (parseFloat(progressFill.style.width || 0) / 100 * SLIDE_DURATION);
   });
-  track.addEventListener('mouseleave', () => {
+  carouselWrapper.addEventListener('mouseleave', () => {
     function resumeProg(now) {
       const elapsed = now - progressStart;
       const pct = Math.min((elapsed / SLIDE_DURATION) * 100, 100);
