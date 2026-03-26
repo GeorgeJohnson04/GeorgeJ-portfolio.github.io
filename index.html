@@ -1,106 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | George T. Johnson</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Add this style potentially to your style.css */
-        .profile-pic {
-            width: 100px; /* Adjust size as needed */
-            height: 100px; /* Adjust size as needed */
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 3px solid #007bff; /* Example border color, match your theme */
-            display: block; /* Center the image if needed */
-            margin-left: auto;
-            margin-right: auto;
-       }
-        .profile-info { text-align: center; } /* Center text below image */
-   </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>George T. Johnson | Commercial &amp; Financial Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #0b0f1a; color: #e2e8f0; line-height: 1.6; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    :root {
+      --navy: #0b0f1a; --navy-2: #111827; --navy-3: #1f2937; --navy-4: #374151;
+      --blue: #3b82f6; --blue-light: #60a5fa; --blue-dim: #1d4ed8;
+      --gold: #f59e0b;
+      --text: #f1f5f9; --text-muted: #94a3b8; --text-dim: #64748b;
+      --border: #1e293b; --radius: 12px; --radius-sm: 8px;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--navy-4); border-radius: 3px; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(11,15,26,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(59,130,246,0.1); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-weight: 700; font-size: 1.1rem; color: var(--text); }
+    .nav-logo span { color: var(--blue); }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { background: var(--blue) !important; color: #fff !important; padding: 0.4rem 1rem; border-radius: 6px; }
+    .hero { min-height: 100vh; display: flex; align-items: center; padding: 6rem 2rem 4rem; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 800px 600px at 10% 50%, rgba(59,130,246,0.08) 0%, transparent 70%); pointer-events: none; }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+    .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2); color: var(--blue-light); font-size: 0.8rem; font-weight: 500; padding: 0.35rem 0.85rem; border-radius: 100px; margin-bottom: 1.5rem; }
+    .hero-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: pulse-green 2s infinite; }
+    @keyframes pulse-green { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; color: var(--text); margin-bottom: 0.5rem; }
+    .hero h1 .highlight { background: linear-gradient(135deg, var(--blue), var(--blue-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-sub { font-size: clamp(1rem, 2vw, 1.25rem); color: var(--text-muted); margin-bottom: 1rem; }
+    .hero-desc { font-size: 1rem; color: var(--text-dim); max-width: 540px; margin-bottom: 2.5rem; line-height: 1.75; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 3rem; }
+    .btn-primary { background: var(--blue); color: #fff; padding: 0.75rem 1.75rem; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 600; transition: all 0.2s; border: 1px solid var(--blue); display: inline-flex; align-items: center; gap: 0.5rem; }
+    .btn-primary:hover { background: var(--blue-dim); transform: translateY(-1px); }
+    .btn-secondary { background: transparent; color: var(--text); padding: 0.75rem 1.75rem; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 600; border: 1px solid var(--navy-4); transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .btn-secondary:hover { border-color: var(--blue); color: var(--blue-light); }
+    .hero-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+    .hero-stat .num { font-size: 1.75rem; font-weight: 800; color: var(--text); line-height: 1; }
+    .hero-stat .num span { color: var(--blue); }
+    .hero-stat p { font-size: 0.8rem; color: var(--text-dim); margin-top: 0.25rem; }
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
+    .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.5rem; }
+    .section-title { font-size: clamp(1.5rem, 4vw, 2.25rem); font-weight: 800; color: var(--text); letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .section-sub { color: var(--text-dim); font-size: 1rem; margin-bottom: 3rem; }
+    #about { background: var(--navy-2); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-text p { color: var(--text-muted); font-size: 0.975rem; line-height: 1.8; margin-bottom: 1rem; }
+    .about-cards { display: grid; gap: 1rem; }
+    .about-card { background: var(--navy-3); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; display: flex; align-items: flex-start; gap: 1rem; transition: border-color 0.2s, transform 0.2s; }
+    .about-card:hover { border-color: rgba(59,130,246,0.3); transform: translateY(-2px); }
+    .about-card-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(59,130,246,0.1); display: flex; align-items: center; justify-content: center; color: var(--blue); font-size: 1rem; flex-shrink: 0; }
+    .about-card h4 { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
+    .about-card p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
+    #experience { background: var(--navy); }
+    .exp-grid { display: grid; gap: 1rem; }
+    .exp-card { background: var(--navy-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; display: grid; grid-template-columns: auto 1fr; gap: 1.25rem; align-items: start; transition: border-color 0.2s, transform 0.2s; position: relative; overflow: hidden; }
+    .exp-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--navy-4); transition: background 0.2s; }
+    .exp-card.current::before { background: var(--blue); }
+    .exp-card:hover { border-color: rgba(59,130,246,0.2); transform: translateY(-2px); }
+    .exp-card:hover::before { background: var(--blue); }
+    .exp-dot { width: 42px; height: 42px; border-radius: 10px; background: var(--navy-3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 1rem; flex-shrink: 0; }
+    .exp-card.current .exp-dot { background: rgba(59,130,246,0.1); border-color: rgba(59,130,246,0.3); color: var(--blue); }
+    .exp-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+    .exp-role { font-size: 0.975rem; font-weight: 700; color: var(--text); }
+    .exp-company { font-size: 0.85rem; color: var(--blue-light); font-weight: 500; margin-top: 0.1rem; }
+    .exp-meta { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; flex-shrink: 0; }
+    .exp-date { font-family: 'Fira Code', monospace; font-size: 0.75rem; color: var(--text-dim); background: var(--navy-3); padding: 0.25rem 0.6rem; border-radius: 4px; border: 1px solid var(--border); white-space: nowrap; }
+    .exp-badge { font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 4px; }
+    .badge-current { background: rgba(34,197,94,0.1); color: #4ade80; border: 1px solid rgba(34,197,94,0.2); }
+    .exp-loc { font-size: 0.8rem; color: var(--text-dim); }
+    .exp-bullets { margin-top: 0.75rem; }
+    .exp-bullets li { font-size: 0.84rem; color: var(--text-muted); padding-left: 1rem; position: relative; line-height: 1.65; margin-bottom: 0.3rem; }
+    .exp-bullets li::before { content: "\25B8"; position: absolute; left: 0; color: var(--blue); font-size: 0.7rem; top: 0.22em; }
+    #projects { background: var(--navy-2); }
+    .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.25rem; }
+    .proj-card { background: var(--navy-3); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; display: flex; flex-direction: column; transition: all 0.2s; }
+    .proj-card:hover { border-color: rgba(59,130,246,0.3); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+    .proj-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 0.75rem; }
+    .proj-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.15); display: flex; align-items: center; justify-content: center; color: var(--blue); font-size: 1.1rem; }
+    .proj-link { width: 32px; height: 32px; border-radius: 6px; background: var(--navy-2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.85rem; transition: all 0.2s; }
+    .proj-link:hover { border-color: var(--blue); color: var(--blue-light); }
+    .proj-title { font-size: 0.975rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .proj-desc { font-size: 0.84rem; color: var(--text-muted); line-height: 1.65; flex: 1; margin-bottom: 1rem; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag { font-size: 0.72rem; font-weight: 500; background: var(--navy-2); border: 1px solid var(--navy-4); color: var(--text-dim); padding: 0.2rem 0.55rem; border-radius: 4px; }
+    #skills { background: var(--navy); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
+    .skill-group { background: var(--navy-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; transition: border-color 0.2s; }
+    .skill-group:hover { border-color: rgba(59,130,246,0.2); }
+    .skill-group-title { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-tag { font-size: 0.82rem; font-weight: 500; background: var(--navy-3); border: 1px solid var(--border); color: var(--text-muted); padding: 0.3rem 0.75rem; border-radius: 6px; transition: all 0.2s; }
+    .skill-tag:hover { border-color: var(--blue); color: var(--blue-light); }
+    #education { background: var(--navy-2); }
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .edu-card { background: var(--navy-3); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; transition: all 0.2s; position: relative; overflow: hidden; }
+    .edu-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue), var(--blue-light)); }
+    .edu-card:hover { border-color: rgba(59,130,246,0.2); transform: translateY(-2px); }
+    .edu-school-logo { width: 48px; height: 48px; border-radius: 10px; background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1rem; }
+    .edu-degree { font-size: 0.975rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
+    .edu-school { font-size: 0.85rem; color: var(--blue-light); font-weight: 500; margin-bottom: 0.75rem; }
+    .edu-meta { display: flex; flex-direction: column; gap: 0.3rem; }
+    .edu-meta span { font-size: 0.8rem; color: var(--text-dim); display: flex; align-items: center; gap: 0.4rem; }
+    .edu-meta span i { color: var(--blue); width: 14px; }
+    #contact { background: var(--navy); }
+    .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-info p { color: var(--text-muted); font-size: 0.975rem; line-height: 1.8; margin-bottom: 2rem; }
+    .contact-items { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; background: var(--navy-2); border: 1px solid var(--border); border-radius: var(--radius-sm); transition: all 0.2s; }
+    .contact-item:hover { border-color: rgba(59,130,246,0.3); }
+    .contact-item-icon { width: 38px; height: 38px; border-radius: 8px; background: rgba(59,130,246,0.1); display: flex; align-items: center; justify-content: center; color: var(--blue); font-size: 0.9rem; flex-shrink: 0; }
+    .contact-item-info .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); font-weight: 600; }
+    .contact-item-info .value { font-size: 0.88rem; color: var(--text); font-weight: 500; margin-top: 0.1rem; }
+    .contact-cta { background: var(--navy-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem; }
+    .contact-cta h3 { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
+    .contact-cta p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; }
+    .contact-cta-links { display: flex; flex-direction: column; gap: 0.75rem; }
+    .cta-link { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 1.25rem; background: var(--navy-3); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text); font-size: 0.88rem; font-weight: 500; transition: all 0.2s; }
+    .cta-link:hover { border-color: rgba(59,130,246,0.3); color: var(--blue-light); transform: translateX(4px); }
+    footer { background: var(--navy-2); border-top: 1px solid var(--border); padding: 2rem; text-align: center; }
+    footer p { font-size: 0.82rem; color: var(--text-dim); }
+    footer a { color: var(--blue); }
+    @media (max-width: 768px) { nav { padding: 0 1rem; } .nav-links { display: none; } .hero { padding: 5rem 1.25rem 3rem; } section { padding: 3.5rem 1.25rem; } .about-grid, .edu-grid, .contact-wrapper { grid-template-columns: 1fr; gap: 2rem; } .exp-card { grid-template-columns: 1fr; } .exp-dot { display: none; } }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <aside class="sidebar">
-            <div class="sidebar-content">
-                <div class="profile-info">
-                    <img src="professional picture.jpg" alt="George T. Johnson" class="profile-pic">
-                    <h1>George T. Johnson</h1>
-                    <p class="tagline">Data Analyst & Financial Analyst</p>
-                </div>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
-                        <li><a href="projects.html"><i class="fas fa-laptop-code"></i> Projects</a></li>
-                        <li><a href="resume.html"><i class="fas fa-file-alt"></i> Resume & Skills</a></li>
-                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-                    </ul>
-                </nav>
-                <div class="sidebar-footer">
-                    <div class="social-links">
-                        <a href="https://linkedin.com/in/george-johnson2004" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/georgejohnson04" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://linktr.ee/georgejohnson04" target="_blank" aria-label="Linktree"><i class="fas fa-link"></i></a>
-                        <a href="mailto:George.johnson022004@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
-                     <div class="resume-links">
-                         <a href="resumes/George T Johnson Analytics Resume.pdf" target="_blank" class="resume-btn">Analytics Resume <i class="fas fa-download"></i></a>
-                         <a href="resumes/George T Johnson Sales Resume.pdf" target="_blank" class="resume-btn">Sales Resume <i class="fas fa-download"></i></a>
-                       </div>
-                    <p class="copyright">&copy; 2025 George T. Johnson</p>
-                </div>
-            </div>
-        </aside>
-
-        <main class="main-content">
-            <section id="about-detailed">
-                <h2 class="section-title">About Me</h2>
-                <p>As a dedicated student completing a Bachelor of Science in Economics and Public Policy from the University of Houston, I have honed my analytical and research skills to tackle real-world challenges. This journey fueled my passion for data analysis, policy research, and problem-solving. I am detail-oriented with experience in Python, SQL, R, Excel, and advanced statistics, seeking to apply data analysis and automation skills to support decision-making, streamline workflows, and drive business impacts.</p>
-                <p>I am a goal-driven professional with a strong background in data analysis, business operations, and client outreach. My experience spans the public, private, and nonprofit sectors, where I've developed skills in data modeling (Python, R, Stata, MATLAB), quantitative analysis, and deriving actionable insights. I excel at translating data into strategic decisions, whether tracking financial flows, optimizing market targeting, automating processes, or evaluating policy impacts. I am passionate about leveraging analytical rigor to solve real-world problems and drive meaningful change.</p>
-                <p>As I begin my Master's in Applied Economics at Johns Hopkins University (Est. Graduation 2026) with a focus on Financial Economics, I am eager to further develop my expertise and apply my knowledge to drive informed decision-making. I am committed to using my skills to help companies grow, innovate, and succeed.</p>
-            </section>
-
-            <section id="education-detailed">
-                <h2 class="section-title">Education</h2>
-                <div class="timeline">
-                     <div class="timeline-item">
-                         <div class="timeline-date">Est. 2026</div>
-                         <div class="timeline-content">
-                             <h3>M.S. in Applied Economics</h3>
-                             <p>Johns Hopkins University, Advanced Academic Programs</p>
-                             <ul>
-                                 <li>Focus: Financial Economics</li>
-                             </ul>
-                         </div>
-                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">Aug 2022 - May 2025</div>
-                        <div class="timeline-content">
-                            <h3>B.S. in Economics & Public Policy</h3>
-                            <p>University of Houston</p>
-                            <ul>
-                                <li>Honors: Dean's List (Spring 2024), Certificate in Quantitative Economics</li>
-                                <li>GPA: 3.3 (Cumulative), 3.4 (Economics), 3.6 (Public Policy)</li>
-                                <li>Relevant Coursework: Econometrics, Statistics, Game Theory, Multivariable Calculus, Linear Algebra</li>
-                                <li>Activities: Economics Society, Coog Esports (Analyst/Player/Coach), Code [COOGS]</li>
-                               </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-             <section id="career-focus">
-                <h2 class="section-title">Career Focus</h2>
-                <p>My career interests lie at the intersection of data analysis, financial analysis, and policy research. I am driven to leverage quantitative methods and analytical tools to uncover business insights, evaluate economic impacts, and inform strategic decision-making. I am particularly interested in roles where I can apply my skills in data modeling, econometrics, financial analysis, and process automation to solve complex problems in both the private and public sectors.</p>
-             </section>
-        </main>
+  <nav>
+    <div class="nav-logo">George<span>.</span>Johnson</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+  <section class="hero" id="home">
+    <div class="hero-grid"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">Available for opportunities</div>
+      <h1>George T.<br/><span class="highlight">Johnson</span></h1>
+      <p class="hero-sub">Commercial Analyst &amp; Quantitative Researcher</p>
+      <p class="hero-desc">Commercial Analyst at Enbridge's Tidal Energy Marketing division. M.S. Applied Economics candidate at Johns Hopkins (4.0 GPA), specializing in Financial Economics &amp; Machine Learning.</p>
+      <div class="hero-btns">
+        <a href="#experience" class="btn-primary"><i class="fas fa-briefcase"></i> View Experience</a>
+        <a href="#contact" class="btn-secondary"><i class="fas fa-envelope"></i> Get in Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">4<span>.0</span></div><p>Graduate GPA</p></div>
+        <div class="hero-stat"><div class="num">10<span>+</span></div><p>Roles &amp; Internships</p></div>
+        <div class="hero-stat"><div class="num">8<span>+</span></div><p>Research Projects</p></div>
+        <div class="hero-stat"><div class="num">5<span>+</span></div><p>Years of Experience</p></div>
+      </div>
     </div>
+  </section>
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="section-label">About Me</p>
+          <h2 class="section-title">Analyst, Researcher,<br/>Problem Solver</h2>
+          <p style="margin-top:1.25rem">I'm a Commercial Analyst at Enbridge's Tidal Energy Marketing division and a graduate student at Johns Hopkins University, pursuing an M.S. in Applied Economics with a focus on Financial Economics and Machine Learning.</p>
+          <p>My background spans energy markets, public finance, policy analysis, and data science. I thrive at the intersection of quantitative rigor and strategic decision-making.</p>
+          <p>Previously at the University of Houston, I graduated Cum Laude with a B.S. in Economics and Public Policy, conducting original research on AI's impact on immigrant labor.</p>
+          <div class="hero-btns" style="margin-top:1.75rem">
+            <a href="https://linkedin.com/in/george-johnson2004" target="_blank" class="btn-secondary" style="font-size:0.85rem;padding:0.6rem 1.25rem"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/georgejohnson04" target="_blank" class="btn-secondary" style="font-size:0.85rem;padding:0.6rem 1.25rem"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+        <div class="about-cards">
+          <div class="about-card"><div class="about-card-icon"><i class="fas fa-bolt"></i></div><div><h4>Current Role</h4><p>Commercial Analyst · Tidal Energy Marketing · Enbridge · Houston, TX</p></div></div>
+          <div class="about-card"><div class="about-card-icon"><i class="fas fa-graduation-cap"></i></div><div><h4>Graduate Studies</h4><p>M.S. Applied Economics (Financial Economics &amp; ML) · Johns Hopkins University · GPA: 4.0</p></div></div>
+          <div class="about-card"><div class="about-card-icon"><i class="fas fa-university"></i></div><div><h4>Undergraduate</h4><p>B.S. Economics &amp; Public Policy · University of Houston · Cum Laude</p></div></div>
+          <div class="about-card"><div class="about-card-icon"><i class="fas fa-map-marker-alt"></i></div><div><h4>Location</h4><p>Houston, TX · Open to remote &amp; hybrid opportunities</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="experience">
+    <div class="section-inner">
+      <p class="section-label">Career History</p>
+      <h2 class="section-title">Professional Experience</h2>
+      <p class="section-sub">A track record across energy, finance, government, and tech sectors.</p>
+      <div class="exp-grid">
+        <div class="exp-card current"><div class="exp-dot"><i class="fas fa-bolt"></i></div><div class="exp-body"><div class="exp-top"><div><div class="exp-role">Commercial Analyst</div><div class="exp-company">Tidal Energy Marketing &middot; Enbridge</div></div><div class="exp-meta"><span class="exp-date">2025 &ndash; Present</span><span class="exp-badge badge-current">Current</span></div></div><div class="exp-loc"><i class="fas fa-map-marker-alt" style="margin-right:0.35rem;color:var(--blue)"></i>Houston, TX</div><ul class="exp-bullets"><li>Perform commercial analysis for energy marketing operations within Enbridge's Tidal Energy Marketing division.</li><li>Support deal structuring, market intelligence, and financial modeling for natural gas and energy commodity transactions.</li><li>Analyze market data and generate reports to support trading and commercial decision-making.</li></ul></div></div>
+        <div class="exp-card"><div class="exp-dot"><i class="fas fa-landmark"></i></div><div class="exp-body"><div class="exp-top"><div><div class="exp-role">Financial Analyst Intern</div><div class="exp-company">Harris County Treasury Department</div></div><div class="exp-meta"><span class="exp-date">Jan 2025 &ndash; Apr 2025</span></div></div><div class="exp-loc"><i class="fas fa-map-marker-alt" style="margin-right:0.35rem;color:var(--blue)"></i>Houston, TX</div><ul class="exp-bullets"><li>Tracked 1099 reports for over 100,000 residents, ensuring accurate financial reporting.</li><li>Monitored financial data across 54 MUD Districts, inspecting fund allocation and compliance.</li><li>Developed VBA Macros to automate data formatting, reducing manual processing time by <strong style="color:var(--gold)">82%</strong>.</li></ul></div></div>
+        <div class="exp-card"><div class="exp-dot"><i class="fas fa-chart-bar"></i></div><div class="exp-body"><div class="exp-top"><div><div class="exp-role">Business Analyst</div><div class="exp-company">Poliquicks</div></div><div class="exp-meta"><span class="exp-date">Jan 2025 &ndash; Apr 2025</span></div></div><div class="exp-loc"><i class="fas fa-map-marker-alt" style="margin-right:0.35rem;color:var(--blue)"></i>Austin, TX &middot; Remote</div><ul class="exp-bullets"><li>Identified KPIs to boost off-cycle user activity, increasing app engagement by <strong style="color:var(--gold)">15%</strong>.</li><li>Delivered business insights from Google Analytics and restructured data visualizations in Power BI.</li><li>Built a Python automation script for reporting, cutting manual work by <strong style="color:var(--gold)">80%</strong>.</li></ul></div></div>
+        <div class="exp-card"><div class="exp-dot"><i class="fas fa-database"></i></div><div class="exp-body"><div class="exp-top"><div><div class="exp-role">Data Analyst</div><div class="exp-company">Poliquicks</div></div><div class="exp-meta"><span class="exp-date">Sep 2024 &ndash; Dec 2024</span></div></div><div class="exp-loc"><i class="fas fa-map-marker-alt" style="margin-right:0.35rem;color:var(--blue)"></i>Austin, TX &middot; Remote</div><ul class="exp-bullets"><li>Developed data-driven maps to optimize user targeting during election year, boosting engagement by <strong style="color:var(--gold)">63%</strong>.</li><li>Conducted market analysis supporting strategic growth decisions.</li><li>Ensured data integrity by removing bias inputs, enhancing platform credibility.</li></ul></div></div>
+        <div class="exp-card"><div class="exp-dot"><i class="fas fa-gamepad"></i></div><div class="exp-body"><div class="exp-top"><div><div class="exp-role">Business Operations Analyst</div><div class="exp-company">Southern Esports Conference</div></div><div class="exp-meta"><span class="exp-date">Aug 2024 &ndash; Dec 2024</span></div></div><div class="exp-loc"><i class="fas fa-map-marker-alt" style="margin-right:0.35rem;color:var(--blue)"></i>Houston, TX &middot; Remote</div><ul class="exp-bullets"><li>Created player rating algorithms for Valorant and Overwatch, later converted to Python.</li><li>Automated website data updates, reducing manual errors by <strong style="color:var(--gold)">98%</strong>.</li><li>Delivered data insights directly to CEO &amp; CFO, improving tournament structure.</li></ul></div></div>
+        <div class="exp-card"><div class="exp-dot"><i class="fas fa-flask"></i></div><div class="exp-body"><div class="exp-top"><div><div class="exp-role">Summer Undergraduate Research Fellow</div><div class="exp-company">University of Houston</div></div><div class="exp-meta"><span class="exp-date">Apr 2024 &ndash; Sep 2024</span></div></div><div class="exp-loc"><i class="fas fa-map-marker-alt" style="margin-right:0.35rem;color:var(--blue)"></i>Houston, TX</div><ul class="exp-bullets"><li>Performed econometric analysis on 100,000+ data points using R, STATA, and Excel.</li><li>Proposed evidence-based policy actions derived from linear and logistic regression results.</li><li>Delivered a research presentation on AI's impact on immigrant labor outcomes.</li></ul></div></div>
+        <div class="exp-card"><div class="exp-dot"><i class="fas fa-globe-asia"></i></div><div class="exp-body"><div class="exp-top"><div><div class="exp-role">Financial &amp; Market Analyst</div><div class="exp-company">Asia Society Texas Center</div></div><div class="exp-meta"><span class="exp-date">May 2024 &ndash; Aug 2024</span></div></div><div class="exp-loc"><i class="fas fa-map-marker-alt" style="margin-right:0.35rem;color:var(--blue)"></i>Houston, TX &middot; Hybrid</div><ul class="exp-bullets"><li>Built Excel cost-benefit models contributing to <strong style="color:var(--gold)">43% revenue growth</strong> in program initiatives.</li><li>Conducted community analysis driving a <strong style="color:var(--gold)">62% increase</strong> in ticket sales.</li><li>Optimized survey methodologies, increasing outreach effectiveness by <strong style="color:var(--gold)">22%</strong>.</li></ul></div></div>
+        <div class="exp-card"><div class="exp-dot"><i class="fas fa-home"></i></div><div class="exp-body"><div class="exp-top"><div><div class="exp-role">HOA Policy Analyst</div><div class="exp-company">Spectrum Association Management</div></div><div class="exp-meta"><span class="exp-date">Jan 2024 &ndash; May 2024</span></div></div><div class="exp-loc"><i class="fas fa-map-marker-alt" style="margin-right:0.35rem;color:var(--blue)"></i>Houston, TX &middot; Remote</div><ul class="exp-bullets"><li>Assisted HOA clients and local government in managing budgets and financial compliance.</li><li>Performed policy research on municipal governance and HOA regulations.</li></ul></div></div>
+        <div class="exp-card"><div class="exp-dot"><i class="fas fa-store"></i></div><div class="exp-body"><div class="exp-top"><div><div class="exp-role">Campus Manager</div><div class="exp-company">Fresh Prints</div></div><div class="exp-meta"><span class="exp-date">Jun 2023 &ndash; Dec 2023</span></div></div><div class="exp-loc"><i class="fas fa-map-marker-alt" style="margin-right:0.35rem;color:var(--blue)"></i>Houston, TX</div><ul class="exp-bullets"><li>Built a book of business with 12 recurring clients, generating <strong style="color:var(--gold)">$15,000</strong> in revenue.</li><li>Managed the full sales cycle: prospecting, negotiations, fulfillment, and client follow-up.</li></ul></div></div>
+      </div>
+    </div>
+  </section>
+  <section id="projects">
+    <div class="section-inner">
+      <p class="section-label">Work &amp; Research</p>
+      <h2 class="section-title">Projects</h2>
+      <p class="section-sub">Research and analytical work spanning economics, finance, and data science.</p>
+      <div class="proj-grid">
+        <div class="proj-card"><div class="proj-header"><div class="proj-icon"><i class="fab fa-python"></i></div><div><a href="https://github.com/GeorgeJohnson04" class="proj-link" target="_blank"><i class="fab fa-github"></i></a></div></div><div class="proj-title">AI &amp; Automation Research &mdash; UH SURF</div><div class="proj-desc">Econometric study on AI's impact on immigrant labor markets. Analyzed 100,000+ data points and presented policy recommendations at the UH Summer Undergraduate Research Fellowship.</div><div class="proj-tags"><span class="tag">R</span><span class="tag">STATA</span><span class="tag">Regression</span><span class="tag">Policy Analysis</span></div></div>
+        <div class="proj-card"><div class="proj-header"><div class="proj-icon"><i class="fas fa-chart-line"></i></div><div><a href="https://github.com/GeorgeJohnson04" class="proj-link" target="_blank"><i class="fab fa-github"></i></a></div></div><div class="proj-title">Harris County Budget Spending Analysis</div><div class="proj-desc">Comprehensive analysis of 54 MUD Districts' financial data. Built Excel &amp; Python pipelines to identify budget anomalies and reporting irregularities across county funds.</div><div class="proj-tags"><span class="tag">Python</span><span class="tag">VBA</span><span class="tag">Excel</span><span class="tag">Public Finance</span></div></div>
+        <div class="proj-card"><div class="proj-header"><div class="proj-icon"><i class="fas fa-balance-scale"></i></div><div><a href="https://github.com/GeorgeJohnson04" class="proj-link" target="_blank"><i class="fab fa-github"></i></a></div></div><div class="proj-title">R Employment/Crime Replication Study</div><div class="proj-desc">Replicated Ehrlich (1973) deterrence model using modern econometric methods in R. Validated original findings with updated datasets and panel regression techniques.</div><div class="proj-tags"><span class="tag">R</span><span class="tag">Econometrics</span><span class="tag">Panel Data</span></div></div>
+        <div class="proj-card"><div class="proj-header"><div class="proj-icon"><i class="fas fa-dollar-sign"></i></div><div><a href="https://github.com/GeorgeJohnson04" class="proj-link" target="_blank"><i class="fab fa-github"></i></a></div></div><div class="proj-title">MATLAB Trump Tax Plan Simulation</div><div class="proj-desc">Modeled tax policy scenarios using MATLAB, simulating Laffer Curve dynamics and revenue projections under alternative marginal tax rate structures.</div><div class="proj-tags"><span class="tag">MATLAB</span><span class="tag">Tax Policy</span><span class="tag">Fiscal Modeling</span></div></div>
+        <div class="proj-card"><div class="proj-header"><div class="proj-icon"><i class="fas fa-globe"></i></div><div><a href="https://github.com/GeorgeJohnson04" class="proj-link" target="_blank"><i class="fab fa-github"></i></a></div></div><div class="proj-title">STATA Infant Mortality vs. GDP Analysis</div><div class="proj-desc">Cross-country econometric analysis examining the relationship between infant mortality rates and GDP per capita using instrumental variable and fixed-effects methods.</div><div class="proj-tags"><span class="tag">STATA</span><span class="tag">IV Regression</span><span class="tag">Development Economics</span></div></div>
+        <div class="proj-card"><div class="proj-header"><div class="proj-icon"><i class="fas fa-file-alt"></i></div><div><a href="https://github.com/GeorgeJohnson04" class="proj-link" target="_blank"><i class="fab fa-github"></i></a></div></div><div class="proj-title">Python Policy Analysis Framework</div><div class="proj-desc">Python-based pipeline for processing, cleaning, and analyzing large-scale policy datasets with regression analysis, visualization layers, and automated report generation.</div><div class="proj-tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span></div></div>
+        <div class="proj-card"><div class="proj-header"><div class="proj-icon"><i class="fas fa-table"></i></div><div><a href="https://github.com/GeorgeJohnson04" class="proj-link" target="_blank"><i class="fab fa-github"></i></a></div></div><div class="proj-title">Advanced Excel Financial Modeling Suite</div><div class="proj-desc">Collection of Excel-based financial models including DCF, cost-benefit analysis, and scenario modeling, with VBA macros and Power Query automation workflows.</div><div class="proj-tags"><span class="tag">Excel</span><span class="tag">VBA</span><span class="tag">Financial Modeling</span></div></div>
+        <div class="proj-card"><div class="proj-header"><div class="proj-icon"><i class="fas fa-pen-fancy"></i></div><div><a href="https://github.com/GeorgeJohnson04" class="proj-link" target="_blank"><i class="fab fa-github"></i></a></div></div><div class="proj-title">LaTeX Academic Research Papers</div><div class="proj-desc">Collection of professionally typeset academic research papers covering econometrics, public policy, labor economics, and financial analysis.</div><div class="proj-tags"><span class="tag">LaTeX</span><span class="tag">Research</span><span class="tag">Academic Writing</span></div></div>
+      </div>
+    </div>
+  </section>
+  <section id="skills">
+    <div class="section-inner">
+      <p class="section-label">Toolkit</p>
+      <h2 class="section-title">Skills &amp; Technologies</h2>
+      <p class="section-sub">Languages, tools, and platforms I use to analyze, model, and build.</p>
+      <div class="skills-grid">
+        <div class="skill-group"><div class="skill-group-title"><i class="fas fa-code"></i> Programming Languages</div><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">R</span><span class="skill-tag">SQL</span><span class="skill-tag">VBA</span><span class="skill-tag">STATA</span><span class="skill-tag">MATLAB</span><span class="skill-tag">LaTeX</span></div></div>
+        <div class="skill-group"><div class="skill-group-title"><i class="fas fa-tools"></i> Tools &amp; Platforms</div><div class="skill-tags"><span class="skill-tag">Tableau</span><span class="skill-tag">Power BI</span><span class="skill-tag">Bloomberg Terminal</span><span class="skill-tag">Excel (Advanced)</span><span class="skill-tag">Git &amp; GitHub</span><span class="skill-tag">Google Analytics</span></div></div>
+        <div class="skill-group"><div class="skill-group-title"><i class="fab fa-python"></i> Python Libraries</div><div class="skill-tags"><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">Scikit-learn</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">SciPy</span><span class="skill-tag">Statsmodels</span></div></div>
+        <div class="skill-group"><div class="skill-group-title"><i class="fas fa-chart-pie"></i> Domain Expertise</div><div class="skill-tags"><span class="skill-tag">Financial Modeling</span><span class="skill-tag">Econometrics</span><span class="skill-tag">Energy Markets</span><span class="skill-tag">Policy Analysis</span><span class="skill-tag">Machine Learning</span></div></div>
+        <div class="skill-group"><div class="skill-group-title"><i class="fas fa-certificate"></i> Certifications</div><div class="skill-tags"><span class="skill-tag">Bloomberg Market Concepts</span><span class="skill-tag">Google Data Analytics</span><span class="skill-tag">Microsoft Excel Expert</span></div></div>
+        <div class="skill-group"><div class="skill-group-title"><i class="fas fa-users"></i> Leadership</div><div class="skill-tags"><span class="skill-tag">Phi Beta Sigma Fraternity</span><span class="skill-tag">UH Economics Society</span><span class="skill-tag">Student Government</span><span class="skill-tag">UH Honors College</span></div></div>
+      </div>
+    </div>
+  </section>
+  <section id="education">
+    <div class="section-inner">
+      <p class="section-label">Academic Background</p>
+      <h2 class="section-title">Education</h2>
+      <p class="section-sub">Combining rigorous economic theory with quantitative methods and machine learning.</p>
+      <div class="edu-grid">
+        <div class="edu-card"><div class="edu-school-logo">&#127891;</div><div class="edu-degree">M.S. Applied Economics</div><div class="edu-school">Johns Hopkins University</div><div class="edu-meta"><span><i class="fas fa-book"></i>Financial Economics &amp; Machine Learning</span><span><i class="fas fa-star"></i>GPA: 4.0</span><span><i class="fas fa-calendar"></i>2025 &ndash; Present</span><span><i class="fas fa-map-marker-alt"></i>Baltimore, MD</span></div></div>
+        <div class="edu-card"><div class="edu-school-logo">&#127963;</div><div class="edu-degree">B.S. Economics &amp; Public Policy</div><div class="edu-school">University of Houston</div><div class="edu-meta"><span><i class="fas fa-award"></i>Cum Laude</span><span><i class="fas fa-calendar"></i>2021 &ndash; 2025</span><span><i class="fas fa-map-marker-alt"></i>Houston, TX</span><span><i class="fas fa-microscope"></i>SURF Research Fellow</span></div></div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="section-inner">
+      <p class="section-label">Let's Connect</p>
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-sub">Open to research collaborations, analytical opportunities, and professional conversations.</p>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <p>Whether you're looking for a quantitative analyst, want to discuss energy markets, or are interested in connecting professionally &mdash; I'd love to hear from you.</p>
+          <div class="contact-items">
+            <a href="mailto:George.johnson022004@gmail.com" class="contact-item"><div class="contact-item-icon"><i class="fas fa-envelope"></i></div><div class="contact-item-info"><div class="label">Email</div><div class="value">George.johnson022004@gmail.com</div></div></a>
+            <a href="https://linkedin.com/in/george-johnson2004" target="_blank" class="contact-item"><div class="contact-item-icon"><i class="fab fa-linkedin"></i></div><div class="contact-item-info"><div class="label">LinkedIn</div><div class="value">linkedin.com/in/george-johnson2004</div></div></a>
+            <a href="https://github.com/georgejohnson04" target="_blank" class="contact-item"><div class="contact-item-icon"><i class="fab fa-github"></i></div><div class="contact-item-info"><div class="label">GitHub</div><div class="value">github.com/GeorgeJohnson04</div></div></a>
+            <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div><div class="contact-item-info"><div class="label">Location</div><div class="value">Houston, TX</div></div></div>
+          </div>
+        </div>
+        <div class="contact-cta">
+          <h3>Quick Links</h3>
+          <p>Access my professional profiles and documents directly.</p>
+          <div class="contact-cta-links">
+            <a href="https://linkedin.com/in/george-johnson2004" target="_blank" class="cta-link"><span><i class="fab fa-linkedin" style="margin-right:0.6rem;color:var(--blue)"></i>View LinkedIn Profile</span><i class="fas fa-arrow-right"></i></a>
+            <a href="https://github.com/GeorgeJohnson04" target="_blank" class="cta-link"><span><i class="fab fa-github" style="margin-right:0.6rem;color:var(--blue)"></i>Browse GitHub Repos</span><i class="fas fa-arrow-right"></i></a>
+            <a href="mailto:George.johnson022004@gmail.com" class="cta-link"><span><i class="fas fa-envelope" style="margin-right:0.6rem;color:var(--blue)"></i>Send an Email</span><i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 George T. Johnson &middot; <a href="https://github.com/GeorgeJohnson04">GitHub</a> &middot; <a href="https://linkedin.com/in/george-johnson2004">LinkedIn</a></p>
+  </footer>
 </body>
 </html>
